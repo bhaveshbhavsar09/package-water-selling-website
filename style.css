@@ -144,3 +144,27 @@ footer {
   background: #0077b6;
   color: #fff;
 }
+/* About Section */
+.about {
+  background: #ffffff;
+  margin: 30px auto;
+  padding: 60px 40px;   /* Increased padding for a bigger feel */
+  border-radius: 10px;
+  max-width: 1000px;
+  box-shadow: 0 6px 12px rgba(0,0,0,0.1);
+  text-align: left;     /* Align text left for professional look */
+}
+
+.about h2 {
+  text-align: center;
+  margin-bottom: 25px;
+  font-size: 2em;
+  color: #0077b6;
+}
+
+.about p {
+  margin-bottom: 20px;
+  font-size: 1.1em;     /* Slightly larger font */
+  line-height: 1.8;     /* More spacing for readability */
+  color: #444;
+}
