@@ -9,7 +9,7 @@
 <body>
   <!-- Header -->
   <header>
-    <div class="logo">💧 AquaPure</div>
+    <a class="logo" href="#home">💧 AquaPure</a>
     <nav>
       <ul>
         <li><a href="#home">Home</a></li>
@@ -18,13 +18,24 @@
         <li><a href="#contact">Contact</a></li>
       </ul>
     </nav>
+    <div class="header-actions">
+      <a class="cart-button" href="#products" aria-label="View shopping cart">Cart <span>0</span></a>
+      <a class="header-button" href="#contact">Shop Now</a>
+    </div>
   </header>
 
   <!-- Hero Section -->
   <section id="home" class="hero">
-    <h1>Pure. Safe. Refreshing.</h1>
-    <p>Delivering clean packaged drinking water for a healthier tomorrow.</p>
-    <a href="#products" class="btn">Explore Products</a>
+    <div class="hero-content">
+      <p class="eyebrow">Hydration, delivered fresh</p>
+      <h1>Pure water for every part of your day.</h1>
+      <p>Clean, safe, and refreshing packaged drinking water for home, work, and everywhere in between.</p>
+      <a href="#products" class="btn">Explore Products <span>→</span></a>
+    </div>
+    <div class="hero-image">
+      <img src="https://images.unsplash.com/photo-1559839914-17aae19cec71?auto=format&fit=crop&w=900&q=85" alt="Clear glass bottle of fresh water beside a glass">
+      <div class="hero-badge"><strong>100%</strong><span>quality tested</span></div>
+    </div>
   </section>
 
   <!-- About Section -->
@@ -51,21 +62,14 @@
 
   <!-- Products Section -->
   <section id="products" class="products">
-    <h2>Our Products</h2>
-    <div class="product-card">
-      <img src="images/bottle1.png" alt="500ml Bottle">
-      <h3>500ml Bottle</h3>
-      <p>Perfect for on-the-go hydration.</p>
+    <div class="section-heading">
+      <p class="eyebrow">Choose your size</p>
+      <h2>Water that fits your routine.</h2>
     </div>
-    <div class="product-card">
-      <img src="images/bottle2.png" alt="1L Bottle">
-      <h3>1L Bottle</h3>
-      <p>Stay refreshed all day long.</p>
-    </div>
-    <div class="product-card">
-      <img src="images/bottle3.png" alt="20L Jar">
-      <h3>20L Jar</h3>
-      <p>Ideal for homes and offices.</p>
+    <div class="product-grid">
+      <article class="product-card"><img src="https://images.unsplash.com/photo-1602143407151-7111542de6e8?auto=format&fit=crop&w=700&q=85" alt="500ml AquaPure water bottle"><div class="product-info"><h3>500ml Bottle</h3><p>Perfect for on-the-go hydration.</p><strong>₹20</strong><a href="#contact" class="product-link">Add to order <span>→</span></a></div></article>
+      <article class="product-card featured-product"><img src="https://images.unsplash.com/photo-1564419320461-6870880221ad?auto=format&fit=crop&w=700&q=85" alt="1 litre AquaPure water bottle"><div class="product-info"><h3>1L Bottle</h3><p>Stay refreshed all day long.</p><strong>₹35</strong><a href="#contact" class="product-link">Add to order <span>→</span></a></div></article>
+      <article class="product-card"><img src="https://images.unsplash.com/photo-1589365278144-c9e705f78a9d?auto=format&fit=crop&w=700&q=85" alt="20 litre AquaPure water jar"><div class="product-info"><h3>20L Jar</h3><p>Ideal for homes and offices.</p><strong>₹110</strong><a href="#contact" class="product-link">Add to order <span>→</span></a></div></article>
     </div>
   </section>
 
