@@ -170,11 +170,24 @@ section {
 
 /* Footer */
 footer {
-  text-align: center;
-  padding: 20px;
-  background: #0077b6;
+  padding: 52px 8vw 22px;
+  background: #073b4c;
   color: #fff;
 }
+
+.footer-grid { display: grid; grid-template-columns: 1.5fr 1fr 1fr 1.2fr; gap: 40px; max-width: 1200px; margin: 0 auto 42px; }
+.footer-logo { display: inline-block; color: #fff; font-size: 1.5rem; font-weight: bold; text-decoration: none; margin-bottom: 12px; }
+.footer-brand > p { max-width: 245px; color: #b8d4d7; }
+.footer-column { display: flex; flex-direction: column; gap: 9px; }
+.footer-column h3 { margin-bottom: 8px; color: #80edcf; font-size: .85rem; letter-spacing: 1px; text-transform: uppercase; }
+.footer-column a, .footer-column p { color: #d4e7e8; text-decoration: none; font-size: .92rem; }
+.footer-column a:hover, .footer-bottom a:hover, .social-links a:hover { color: #80edcf; }
+.footer-contact p { color: #9fc2c5; }
+.social-links { display: flex; flex-wrap: wrap; gap: 14px; margin-top: 20px; }
+.social-links a { color: #fff; font-size: .85rem; text-decoration: none; }
+.footer-bottom { display: flex; justify-content: space-between; gap: 20px; max-width: 1200px; margin: 0 auto; padding-top: 20px; border-top: 1px solid rgba(255,255,255,.18); color: #9fc2c5; font-size: .82rem; }
+.footer-bottom div { display: flex; gap: 20px; }
+.footer-bottom a { color: #d4e7e8; text-decoration: none; }
 
 @media (max-width: 800px) {
   header { flex-wrap: wrap; padding: 16px 5vw; }
@@ -185,6 +198,8 @@ footer {
   .hero-image img { height: 300px; }
   .product-grid { grid-template-columns: 1fr; }
   .product-card img { height: 240px; }
+  .footer-grid { grid-template-columns: repeat(2, 1fr); gap: 34px 24px; }
+  .footer-bottom { flex-direction: column; }
 }
 /* About Section */
 .about {
