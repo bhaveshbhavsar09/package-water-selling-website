@@ -225,3 +225,11 @@ footer {
   line-height: 1.8;     /* More spacing for readability */
   color: #444;
 }
+
+.section-actions, .products-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 24px; }
+.products-actions { justify-content: center; margin-top: 30px; }
+.body-button, .contact-button { display: inline-block; padding: 11px 18px; border: 1px solid #0077b6; border-radius: 5px; background: #0077b6; color: #fff; font-weight: bold; text-decoration: none; transition: background .2s ease, transform .2s ease; }
+.body-button:hover, .contact-button:hover { background: #023e8a; transform: translateY(-2px); }
+.secondary-button { background: transparent; color: #0077b6; }
+.secondary-button:hover { background: #e2f5f7; color: #023e8a; }
+.contact-button { margin: 14px 0 4px; }
