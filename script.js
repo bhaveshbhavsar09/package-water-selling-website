@@ -5,8 +5,36 @@ const cartCount = document.querySelector('#cart-count');
 const cartTotal = document.querySelector('#cart-total');
 const checkoutButton = document.querySelector('#checkout-button');
 const formStatus = document.querySelector('#form-status');
+const servicePincode = document.querySelector('#service-pincode');
+const serviceStatus = document.querySelector('#service-status');
+const deliveryDate = document.querySelector('#delivery-date');
+
+const revealItems = document.querySelectorAll(
+  '.about, .benefits, .delivery-steps, .products, .faq, .contact, .policies, .benefit-item, .step-item, .product-card, .faq details, .policy-grid details'
+);
 
 const formatPrice = (value) => `₹${value.toLocaleString('en-IN')}`;
+const today = new Date().toISOString().split('T')[0];
+deliveryDate.min = today;
+
+if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+  revealItems.forEach((item) => item.classList.add('is-visible'));
+} else if ('IntersectionObserver' in window) {
+  const revealObserver = new IntersectionObserver((entries, observer) => {
+    entries.forEach((entry) => {
+      if (!entry.isIntersecting) return;
+      entry.target.classList.add('is-visible');
+      observer.unobserve(entry.target);
+    });
+  }, { threshold: 0.12 });
+
+  revealItems.forEach((item) => {
+    item.classList.add('reveal-on-scroll');
+    revealObserver.observe(item);
+  });
+} else {
+  revealItems.forEach((item) => item.classList.add('is-visible'));
+}
 
 function saveCart() {
   localStorage.setItem('aquapure-cart', JSON.stringify(cart));
@@ -93,9 +121,43 @@ checkoutButton.addEventListener('click', () => {
 
 document.querySelector('#contact-form').addEventListener('submit', (event) => {
   event.preventDefault();
+  const pincode = servicePincode.value.trim();
+
+  if (!/^\d{6}$/.test(pincode)) {
+    serviceStatus.textContent = 'Enter a valid 6-digit pincode so we can confirm delivery.';
+    serviceStatus.className = 'service-error';
+    servicePincode.focus();
+    return;
+  }
+
+  if (deliveryDate.value < today) {
+    formStatus.textContent = 'Choose today or a future delivery date.';
+    formStatus.className = 'form-status service-error';
+    deliveryDate.focus();
+    return;
+  }
+
+  const orderReference = `AQ-${Date.now().toString().slice(-6)}`;
   formStatus.textContent = 'Thanks. Your request has been received. We will contact you shortly.';
+  formStatus.textContent += ` Reference: ${orderReference}.`;
   formStatus.className = 'form-status success';
   event.target.reset();
+  servicePincode.value = pincode;
+  cart.length = 0;
+  saveCart();
+  renderCart();
+});
+
+document.querySelector('#check-service').addEventListener('click', () => {
+  const pincode = servicePincode.value.trim();
+  if (!/^\d{6}$/.test(pincode)) {
+    serviceStatus.textContent = 'Enter a valid 6-digit pincode.';
+    serviceStatus.className = 'service-error';
+    return;
+  }
+
+  serviceStatus.textContent = 'Pincode received. We will confirm exact delivery availability with your order.';
+  serviceStatus.className = 'service-success';
 });
 
 renderCart();

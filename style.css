@@ -190,6 +190,8 @@ section {
   font: inherit;
 }
 
+.contact select { margin: 10px 0; padding: 10px; border: 1px solid #ccc; border-radius: 5px; background: #fbfdfd; color: #12313a; font: inherit; }
+
 .contact input:focus, .contact textarea:focus { border-color: #0077b6; box-shadow: 0 0 0 3px rgba(0,119,182,.12); outline: none; }
 
 .contact button {
@@ -209,6 +211,22 @@ section {
 
 .form-status { min-height: 24px; margin-top: 10px; font-size: .9rem; }
 .form-status.success { color: #18794e; }
+.service-check { max-width: 500px; margin: 26px auto 8px; padding: 18px; background: #e7f7f3; border: 1px solid #c9e7e1; border-radius: 6px; text-align: left; }
+.service-check-row { display: flex; gap: 8px; margin-top: 10px; }
+.service-check-row input { flex: 1; margin: 0; }
+.service-check-row button { padding: 10px 16px; border: 0; border-radius: 5px; background: #073b4c; color: #fff; font: inherit; font-weight: bold; cursor: pointer; }
+.service-check-row button:hover { background: #0077b6; }
+#service-status { min-height: 22px; margin-top: 8px; font-size: .82rem; }
+.service-success { color: #18794e; }
+.service-error { color: #b54735; }
+.sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0; }
+
+/* Scroll reveal */
+.reveal-on-scroll { opacity: 0; transform: translateY(24px); transition: opacity .65s ease, transform .65s ease; }
+.reveal-on-scroll.is-visible { opacity: 1; transform: translateY(0); }
+@media (prefers-reduced-motion: reduce) {
+  .reveal-on-scroll { opacity: 1; transform: none; transition: none; }
+}
 
 /* FAQ */
 .faq { max-width: 900px; margin: 0 auto; }
@@ -236,6 +254,13 @@ section {
 .checkout-button { width: 100%; border: 0; cursor: pointer; }
 .checkout-button:disabled { background: #b8c8ca; cursor: not-allowed; transform: none; }
 .body-button { font: inherit; cursor: pointer; }
+
+/* Policies */
+.policies { max-width: 1100px; margin: 0 auto; }
+.policy-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; text-align: left; }
+.policy-grid details { padding: 18px; background: #fff; border: 1px solid #d9e8e6; border-radius: 6px; }
+.policy-grid summary { color: #073b4c; cursor: pointer; font-weight: bold; }
+.policy-grid details p { padding-top: 12px; color: #56717a; font-size: .9rem; }
 
 /* Footer */
 footer {
@@ -271,6 +296,7 @@ footer {
   .product-card img { height: 240px; }
   .cart-item { grid-template-columns: 1fr auto; }
   .cart-item > strong:last-child { grid-column: 1 / -1; }
+  .policy-grid { grid-template-columns: 1fr; }
   .footer-grid { grid-template-columns: repeat(2, 1fr); gap: 34px 24px; }
   .footer-bottom { flex-direction: column; }
 }

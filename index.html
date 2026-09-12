@@ -138,11 +138,37 @@
     <p>Email: info@aquapure.com</p>
     <p>Phone: +91 98765 43210</p>
     <a href="tel:+919876543210" class="contact-button">Call us now <span>↗</span></a>
+    <div class="service-check">
+      <strong>Check delivery availability</strong>
+      <div class="service-check-row">
+        <label class="sr-only" for="service-pincode">Delivery pincode</label>
+        <input id="service-pincode" inputmode="numeric" maxlength="6" placeholder="Enter 6-digit pincode">
+        <button id="check-service" type="button">Check</button>
+      </div>
+      <p id="service-status" role="status" aria-live="polite"></p>
+    </div>
     <form id="contact-form">
       <label for="contact-name">Your name</label>
       <input id="contact-name" name="name" type="text" placeholder="Your Name" required>
       <label for="contact-email">Your email</label>
       <input id="contact-email" name="email" type="email" placeholder="Your Email" required>
+      <label for="contact-phone">Phone number</label>
+      <input id="contact-phone" name="phone" type="tel" placeholder="Your Phone Number" required>
+      <label for="contact-address">Delivery address</label>
+      <textarea id="contact-address" name="address" placeholder="House number, street, city" rows="3" required></textarea>
+      <label for="delivery-date">Preferred delivery date</label>
+      <input id="delivery-date" name="deliveryDate" type="date" required>
+      <label for="subscription">Order type</label>
+      <select id="subscription" name="subscription">
+        <option value="one-time">One-time order</option>
+        <option value="weekly">Weekly delivery</option>
+        <option value="monthly">Monthly delivery</option>
+      </select>
+      <label for="payment">Payment preference</label>
+      <select id="payment" name="payment">
+        <option value="cod">Pay on delivery</option>
+        <option value="online">Online payment (confirmed by our team)</option>
+      </select>
       <label for="contact-message">How can we help?</label>
       <textarea id="contact-message" name="message" placeholder="Your Message" rows="4" required></textarea>
       <button type="submit">Send Message</button>
@@ -157,6 +183,16 @@
     <div class="cart-summary"><span>Subtotal</span><strong id="cart-total">₹0</strong></div>
     <button class="body-button checkout-button" id="checkout-button" type="button" disabled>Continue to order</button>
   </dialog>
+
+  <!-- Policies Section -->
+  <section class="policies" id="policies" aria-labelledby="policies-title">
+    <div class="section-heading"><p class="eyebrow">Good to know</p><h2 id="policies-title">Our policies.</h2></div>
+    <div class="policy-grid">
+      <details><summary>Privacy policy</summary><p>We use your contact and delivery details only to respond to your request and arrange your order. We do not sell customer information.</p></details>
+      <details><summary>Cancellation policy</summary><p>Contact our team as soon as possible to change or cancel an order before it is dispatched. We will confirm any applicable refund directly.</p></details>
+      <details><summary>Delivery policy</summary><p>Delivery timing depends on service availability and your selected area. Our team confirms the final delivery slot before dispatch.</p></details>
+    </div>
+  </section>
 
   <!-- Footer -->
   <footer>
@@ -191,7 +227,7 @@
     </div>
     <div class="footer-bottom">
       <p>&copy; 2026 AquaPure. All rights reserved.</p>
-      <div><a href="#contact">Privacy policy</a><a href="#contact">Terms of service</a></div>
+      <div><a href="#policies">Privacy policy</a><a href="#policies">Delivery policy</a></div>
     </div>
   </footer>
 </body>
