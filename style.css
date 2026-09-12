@@ -196,6 +196,7 @@ footer {
   nav ul li { margin: 0; }
   .hero { grid-template-columns: 1fr; padding: 58px 7vw; }
   .hero-image img { height: 300px; }
+  .benefit-grid { grid-template-columns: 1fr; }
   .product-grid { grid-template-columns: 1fr; }
   .product-card img { height: 240px; }
   .footer-grid { grid-template-columns: repeat(2, 1fr); gap: 34px 24px; }
@@ -225,6 +226,15 @@ footer {
   line-height: 1.8;     /* More spacing for readability */
   color: #444;
 }
+
+/* Benefits */
+.benefits { max-width: 1200px; margin: 0 auto; padding-top: 28px; }
+.benefits .section-heading { margin-bottom: 22px; }
+.benefit-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; text-align: left; }
+.benefit-item { display: flex; align-items: flex-start; gap: 14px; padding: 22px; background: #e7f7f3; border-left: 4px solid #80edcf; }
+.benefit-icon { display: grid; place-items: center; flex: 0 0 34px; width: 34px; height: 34px; border-radius: 50%; background: #073b4c; color: #80edcf; font-size: 1.1rem; font-weight: bold; }
+.benefit-item h3 { color: #073b4c; margin-bottom: 5px; }
+.benefit-item p { color: #56717a; font-size: .92rem; line-height: 1.5; }
 
 .section-actions, .products-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 24px; }
 .products-actions { justify-content: center; margin-top: 30px; }
