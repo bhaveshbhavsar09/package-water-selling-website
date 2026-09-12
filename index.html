@@ -5,17 +5,19 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="AquaPure delivers quality-tested packaged drinking water for homes, offices, and everyday hydration.">
   <meta name="theme-color" content="#073b4c">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='46' fill='%2380edcf'/%3E%3Cpath d='M50 15C38 33 27 45 27 60a23 23 0 0 0 46 0c0-15-11-27-23-45Z' fill='%230077b6'/%3E%3C/svg%3E">
   <title>AquaPure - Packaged Drinking Water</title>
   <link rel="stylesheet" href="style.css">
   <script src="script.js" defer></script>
 </head>
 <body>
+  <div class="scroll-progress" id="scroll-progress" aria-hidden="true"></div>
   <!-- Header -->
   <header>
     <a class="logo" href="#home">💧 AquaPure</a>
     <nav>
       <ul>
-        <li><a href="#home">Home</a></li>
+        <li><a class="active" href="#home">Home</a></li>
         <li><a href="#about">About Us</a></li>
         <li><a href="#products">Products</a></li>
         <li><a href="#contact">Contact</a></li>
@@ -87,6 +89,13 @@
         <div><h3>Thoughtfully packed</h3><p>Practical packaging designed with less waste in mind.</p></div>
       </article>
     </div>
+  </section>
+
+  <!-- Trust Stats Section -->
+  <section class="trust-stats" aria-label="AquaPure at a glance">
+    <div class="stat-item"><strong data-count="10" data-suffix="+">0</strong><span>years of experience</span></div>
+    <div class="stat-item"><strong data-count="50000" data-suffix="+">0</strong><span>deliveries completed</span></div>
+    <div class="stat-item"><strong data-count="100" data-suffix="%">0</strong><span>quality tested</span></div>
   </section>
 
   <!-- Delivery Steps Section -->
@@ -183,6 +192,10 @@
     <div class="cart-summary"><span>Subtotal</span><strong id="cart-total">₹0</strong></div>
     <button class="body-button checkout-button" id="checkout-button" type="button" disabled>Continue to order</button>
   </dialog>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <button class="back-to-top" id="back-to-top" type="button" aria-label="Back to top">↑</button>
+  <a class="mobile-order-button" href="#products">Order now <span>→</span></a>
 
   <!-- Policies Section -->
   <section class="policies" id="policies" aria-labelledby="policies-title">
