@@ -1,24 +1,40 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@700;800&display=swap');
+
 /* General Reset */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: Arial, sans-serif;
+  font-family: 'DM Sans', sans-serif;
 }
 
 body {
   line-height: 1.6;
-  background: #f5fbfa;
+  background: #f4f8f7;
   color: #12313a;
+}
+
+h1, h2, h3, .logo, .footer-logo { font-family: 'Manrope', sans-serif; }
+
+::selection { background: #80edcf; color: #073b4c; }
+
+a, button, input, textarea { transition: all .2s ease; }
+
+a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visible {
+  outline: 3px solid #ff9f68;
+  outline-offset: 3px;
 }
 
 /* Header */
 header {
+  position: sticky;
+  top: 0;
+  z-index: 10;
   display: flex;
   justify-content: space-between;
   align-items: center;
   background: #073b4c;
-  padding: 18px 6vw;
+  padding: 16px 6vw;
   color: #fff;
   gap: 28px;
 }
@@ -37,13 +53,16 @@ nav ul {
 }
 
 nav ul li {
-  margin-left: 26px;
+  margin-left: 20px;
 }
 
 nav ul li a {
   color: #fff;
   text-decoration: none;
   font-weight: bold;
+  font-size: .9rem;
+  white-space: nowrap;
+  transition: color .2s ease;
 }
 
 nav ul li a:hover {
@@ -63,8 +82,8 @@ nav ul li a:hover {
   grid-template-columns: 1fr .9fr;
   align-items: center;
   gap: 5vw;
-  padding: 80px 10vw;
-  background: linear-gradient(120deg, #d7f5ed, #b8e7f2);
+  padding: 92px 10vw;
+  background: linear-gradient(120deg, #d7f5ed 0%, #c4eaf0 55%, #b6dff0 100%);
   color: #fff;
   text-align: left;
 }
@@ -73,6 +92,7 @@ nav ul li a:hover {
 .eyebrow { color: #e76f51; font-size: .78rem; font-weight: bold; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 12px; }
 .hero h1 { font-size: clamp(2.5rem, 5vw, 4.8rem); line-height: 1.05;
   margin-bottom: 20px;
+  letter-spacing: -.04em;
 }
 .hero-content > p:not(.eyebrow) { font-size: 1.1rem; max-width: 480px; }
 .hero-image { position: relative; }
@@ -89,10 +109,14 @@ nav ul li a:hover {
   text-decoration: none;
   border-radius: 5px;
   margin-top: 20px;
+  font-weight: bold;
+  box-shadow: 0 8px 18px rgba(0,119,182,.2);
 }
 
 .hero .btn:hover {
   background: #023e8a;
+  transform: translateY(-2px);
+  box-shadow: 0 12px 22px rgba(0,119,182,.25);
 }
 
 /* Sections */
@@ -118,6 +142,7 @@ section {
 }
 .section-heading { text-align: left; margin: 0 15px 24px; }
 .section-heading h2 { font-size: clamp(2rem, 4vw, 3.2rem); color: #073b4c; }
+.section-heading h2, .about h2 { letter-spacing: -.03em; }
 .product-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; }
 
 .product-card {
@@ -126,7 +151,11 @@ section {
   border-radius: 8px;
   text-align: left;
   box-shadow: 0 10px 30px rgba(7,59,76,.09);
+  border: 1px solid rgba(7,59,76,.06);
+  transition: transform .2s ease, box-shadow .2s ease;
 }
+
+.product-card:hover { transform: translateY(-5px); box-shadow: 0 16px 34px rgba(7,59,76,.15); }
 
 .product-card img {
   width: 100%;
@@ -153,7 +182,11 @@ section {
   padding: 10px;
   border: 1px solid #ccc;
   border-radius: 5px;
+  background: #fbfdfd;
+  font: inherit;
 }
+
+.contact input:focus, .contact textarea:focus { border-color: #0077b6; box-shadow: 0 0 0 3px rgba(0,119,182,.12); outline: none; }
 
 .contact button {
   padding: 10px;
@@ -162,6 +195,8 @@ section {
   border: none;
   border-radius: 5px;
   cursor: pointer;
+  font: inherit;
+  font-weight: bold;
 }
 
 .contact button:hover {
