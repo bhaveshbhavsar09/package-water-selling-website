@@ -15,7 +15,7 @@ const heroImage = document.querySelector('.hero-image img');
 const stats = document.querySelectorAll('[data-count]');
 
 const revealItems = document.querySelectorAll(
-  '.about, .benefits, .delivery-steps, .products, .faq, .contact, .policies, .trust-stats, .benefit-item, .step-item, .product-card, .faq details, .policy-grid details'
+  '.about, .benefits, .delivery-steps, .products, .blog, .faq, .contact, .policies, .trust-stats, .benefit-item, .step-item, .product-card, .blog-card, .faq details, .policy-grid details'
 );
 
 const formatPrice = (value) => `₹${value.toLocaleString('en-IN')}`;
@@ -86,7 +86,7 @@ if ('IntersectionObserver' in window && stats.length) {
   statsObserver.observe(document.querySelector('.trust-stats'));
 }
 
-document.querySelectorAll('.hero-image img, .product-card img').forEach((image) => {
+document.querySelectorAll('.hero-image img, .product-card img, .blog-card img').forEach((image) => {
   const markLoaded = () => image.classList.add('image-loaded');
   if (image.complete) markLoaded();
   else image.addEventListener('load', markLoaded, { once: true });
