@@ -265,3 +265,121 @@ document.querySelector('#check-service').addEventListener('click', () => {
 });
 
 renderCart();
+
+// 1. Language Support
+const translations = {
+  en: {
+    nav_products: "Products",
+    nav_blog: "Blog",
+    nav_contact: "Contact",
+    hero_eyebrow: "Hydration, delivered fresh",
+    hero_title: "Pure water for every part of your day.",
+    hero_desc: "Clean, safe, and refreshing packaged drinking water for home, work, and everywhere in between.",
+    hero_btn: "Explore Products"
+  },
+  hi: {
+    nav_products: "उत्पाद",
+    nav_blog: "ब्लॉग",
+    nav_contact: "संपर्क",
+    hero_eyebrow: "ताज़ा हाइड्रेशन",
+    hero_title: "आपके दिन के हर हिस्से के लिए शुद्ध पानी।",
+    hero_desc: "घर, काम और हर जगह के लिए स्वच्छ, सुरक्षित और ताज़ा पैकेज्ड पेयजल।",
+    hero_btn: "उत्पाद देखें"
+  },
+  mr: {
+    nav_products: "उत्पादने",
+    nav_blog: "ब्लॉग",
+    nav_contact: "संपर्क",
+    hero_eyebrow: "ताजे हायड्रेशन",
+    hero_title: "तुमच्या दिवसाच्या प्रत्येक भागासाठी शुद्ध पाणी.",
+    hero_desc: "घर, कार्यालय आणि इतर सर्व ठिकाणी स्वच्छ, सुरक्षित आणि ताजे पिण्याचे पाणी.",
+    hero_btn: "उत्पादने पहा"
+  }
+};
+
+const langSwitch = document.getElementById('lang-switch');
+const i18nElements = document.querySelectorAll('[data-i18n]');
+const savedLang = localStorage.getItem('aquapure-lang') || 'en';
+
+if (langSwitch) {
+  langSwitch.value = savedLang;
+  applyLanguage(savedLang);
+
+  langSwitch.addEventListener('change', (e) => {
+    const lang = e.target.value;
+    localStorage.setItem('aquapure-lang', lang);
+    applyLanguage(lang);
+  });
+}
+
+function applyLanguage(lang) {
+  i18nElements.forEach(el => {
+    const key = el.getAttribute('data-i18n');
+    if (translations[lang] && translations[lang][key]) {
+      el.textContent = translations[lang][key];
+    }
+  });
+}
+
+// 2. Savings Calculator
+const jarSlider = document.getElementById('jar-slider');
+if (jarSlider) {
+  const jarCount = document.getElementById('jar-count');
+  const stdCost = document.getElementById('standard-cost');
+  const subCost = document.getElementById('sub-cost');
+  const totalSavings = document.getElementById('total-savings');
+  
+  jarSlider.addEventListener('input', (e) => {
+    const jarsPerWeek = parseInt(e.target.value, 10);
+    jarCount.textContent = jarsPerWeek + (jarsPerWeek === 1 ? ' Jar' : ' Jars');
+    
+    // 52 weeks in a year
+    const yearlyJars = jarsPerWeek * 52;
+    const standardYearly = yearlyJars * 110;
+    // 15% discount for monthly subscription
+    const subYearly = yearlyJars * (110 * 0.85);
+    
+    stdCost.textContent = '₹' + standardYearly.toLocaleString('en-IN');
+    subCost.textContent = '₹' + subYearly.toLocaleString('en-IN');
+    totalSavings.textContent = '₹' + (standardYearly - subYearly).toLocaleString('en-IN');
+  });
+}
+
+// 3. FAQ Search
+const faqSearch = document.getElementById('faq-search');
+if (faqSearch) {
+  const faqs = document.querySelectorAll('.faq-list details');
+  faqSearch.addEventListener('input', (e) => {
+    const query = e.target.value.toLowerCase();
+    faqs.forEach(faq => {
+      const text = faq.textContent.toLowerCase();
+      if (text.includes(query)) {
+        faq.style.display = 'block';
+      } else {
+        faq.style.display = 'none';
+      }
+    });
+  });
+}
+
+// 4. Newsletter Signup
+const newsletterForm = document.getElementById('newsletter-form');
+if (newsletterForm) {
+  newsletterForm.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const emailInput = document.getElementById('nl-email');
+    showToast('Subscribed! Check your email for your 10% discount code.');
+    emailInput.value = '';
+  });
+}
+
+// Ensure new sections get added to revealItems if they are present
+const newSections = '.source-story, .calculator';
+document.querySelectorAll(newSections).forEach(item => {
+  // Try to find the revealItems observer logic, though for a quick patch we can just add a class
+  item.classList.add('reveal-on-scroll');
+  // It won't be tracked by the existing observer if it was bound early, so we force visibility or bind it manually.
+  setTimeout(() => {
+    item.classList.add('is-visible');
+  }, 100);
+});

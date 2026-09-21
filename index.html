@@ -19,12 +19,17 @@
       <ul>
         <li><a class="active" href="#home">Home</a></li>
         <li><a href="#about">About Us</a></li>
-        <li><a href="#products">Products</a></li>
-        <li><a href="#blog">Blog</a></li>
-        <li><a href="#contact">Contact</a></li>
+        <li><a href="#products" data-i18n="nav_products">Products</a></li>
+        <li><a href="#blog" data-i18n="nav_blog">Blog</a></li>
+        <li><a href="#contact" data-i18n="nav_contact">Contact</a></li>
       </ul>
     </nav>
     <div class="header-actions">
+      <select id="lang-switch" class="lang-switch" aria-label="Change language">
+        <option value="en">EN</option>
+        <option value="hi">HI</option>
+        <option value="mr">MR</option>
+      </select>
       <button class="theme-toggle" id="theme-toggle" type="button" aria-label="Toggle dark mode">🌙</button>
       <button class="cart-button" id="cart-trigger" type="button" aria-label="View shopping cart">Cart <span id="cart-count">0</span></button>
       <a class="header-button" href="#contact">Shop Now</a>
@@ -34,10 +39,10 @@
   <!-- Hero Section -->
   <section id="home" class="hero">
     <div class="hero-content">
-      <p class="eyebrow">Hydration, delivered fresh</p>
-      <h1>Pure water for every part of your day.</h1>
-      <p>Clean, safe, and refreshing packaged drinking water for home, work, and everywhere in between.</p>
-      <a href="#products" class="btn">Explore Products <span>→</span></a>
+      <p class="eyebrow" data-i18n="hero_eyebrow">Hydration, delivered fresh</p>
+      <h1 data-i18n="hero_title">Pure water for every part of your day.</h1>
+      <p data-i18n="hero_desc">Clean, safe, and refreshing packaged drinking water for home, work, and everywhere in between.</p>
+      <a href="#products" class="btn"><span data-i18n="hero_btn">Explore Products</span> <span>→</span></a>
     </div>
     <div class="hero-image">
       <img src="https://images.unsplash.com/photo-1559839914-17aae19cec71?auto=format&fit=crop&w=900&q=85" alt="Clear glass bottle of fresh water beside a glass">
@@ -45,7 +50,38 @@
     </div>
   </section>
 
-  <!-- About Section -->
+  
+  <!-- Source Story Section -->
+  <section id="source-story" class="source-story" aria-labelledby="source-title">
+    <div class="source-overlay"></div>
+    <div class="source-content">
+      <p class="eyebrow">Our Process</p>
+      <h2 id="source-title">Purity, step by step.</h2>
+      <div class="process-grid">
+        <div class="process-step">
+          <div class="step-num">1</div>
+          <h3>Deep Sourcing</h3>
+          <p>We source our water from protected underground aquifers, away from urban pollution.</p>
+        </div>
+        <div class="process-step">
+          <div class="step-num">2</div>
+          <h3>Multi-Stage Filtration</h3>
+          <p>Advanced RO and UV treatment removes impurities, leaving only pure hydration.</p>
+        </div>
+        <div class="process-step">
+          <div class="step-num">3</div>
+          <h3>Mineralization</h3>
+          <p>Essential minerals like Magnesium and Calcium are added for taste and health.</p>
+        </div>
+        <div class="process-step">
+          <div class="step-num">4</div>
+          <h3>Ozonation</h3>
+          <p>A final step ensures the water stays fresh and safe inside the bottle.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+\n  <!-- About Section -->
 <section id="about" class="about">
   <h2>About Us</h2>
   <p>
@@ -174,6 +210,34 @@
       </article>
     </div>
   </section>
+\n  
+  <!-- Savings Calculator -->
+  <section id="calculator" class="calculator" aria-labelledby="calc-title">
+    <div class="section-heading">
+      <p class="eyebrow">Calculate Your Savings</p>
+      <h2 id="calc-title">See how much you save.</h2>
+    </div>
+    <div class="calc-box">
+      <label for="jar-slider">How many 20L jars do you use per week?</label>
+      <div class="slider-container">
+        <input type="range" id="jar-slider" min="1" max="10" value="2">
+        <span id="jar-count">2 Jars</span>
+      </div>
+      <div class="calc-results">
+        <div class="result-row">
+          <span>Standard Cost (Yearly)</span>
+          <span id="standard-cost">₹11,440</span>
+        </div>
+        <div class="result-row highlight">
+          <span>Monthly Subscription (Yearly)</span>
+          <span id="sub-cost">₹9,724</span>
+        </div>
+        <div class="savings-amount">
+          You save <strong id="total-savings">₹1,716</strong> every year!
+        </div>
+      </div>
+    </div>
+  </section>
 \n  <!-- Blog Section -->
   <section id="blog" class="blog" aria-labelledby="blog-title">
     <div class="section-heading">
@@ -241,6 +305,9 @@
     <div class="section-heading">
       <p class="eyebrow">Need to know</p>
       <h2 id="faq-title">Questions, answered.</h2>
+    </div>
+    <div class="faq-search-wrapper">
+      <input type="text" id="faq-search" class="faq-search" placeholder="Search questions..." aria-label="Search FAQs">
     </div>
     <div class="faq-list">
       <details><summary>Where do you deliver?</summary><p>We deliver across nearby cities and towns. Share your location in the order form and our team will confirm availability.</p></details>
@@ -349,6 +416,15 @@
         <a href="mailto:info@aquapure.com">info@aquapure.com</a>
         <a href="tel:+919876543210">+91 98765 43210</a>
         <p>Mon-Sat, 9:00 AM-6:00 PM</p>
+      </div>
+      <div class="footer-column footer-newsletter">
+        <h3>Newsletter</h3>
+        <p>Get 10% off your first subscription.</p>
+        <form id="newsletter-form">
+          <label class="sr-only" for="nl-email">Email</label>
+          <input type="email" id="nl-email" placeholder="Email address" required>
+          <button type="submit">Subscribe</button>
+        </form>
       </div>
     </div>
     <div class="footer-bottom">
