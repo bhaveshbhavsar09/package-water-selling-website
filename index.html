@@ -10,7 +10,15 @@
   <link rel="stylesheet" href="style.css">
   <script src="script.js" defer></script>
 </head>
-<body>
+<body>\n
+  <!-- Preloader -->
+  <div id="preloader" class="preloader">
+    <div class="drop-container">
+      <div class="drop"></div>
+      <div class="ripple"></div>
+    </div>
+  </div>
+  
   <div class="scroll-progress" id="scroll-progress" aria-hidden="true"></div>
   <!-- Header -->
   <header>
@@ -41,7 +49,14 @@
     <div class="hero-content">
       <p class="eyebrow" data-i18n="hero_eyebrow">Hydration, delivered fresh</p>
       <h1 data-i18n="hero_title">Pure water for every part of your day.</h1>
+      
       <p data-i18n="hero_desc">Clean, safe, and refreshing packaged drinking water for home, work, and everywhere in between.</p>
+      
+      <div class="hero-pincode-check">
+        <input type="text" id="hero-pincode" maxlength="6" placeholder="Enter your Pincode (e.g. 400001)" aria-label="Check delivery pincode">
+        <p id="hero-pincode-msg" class="hero-pincode-msg"></p>
+      </div>
+
       <a href="#products" class="btn"><span data-i18n="hero_btn">Explore Products</span> <span>→</span></a>
     </div>
     <div class="hero-image">
@@ -167,7 +182,49 @@
   </section>
 
   
-  <!-- Subscriptions Section -->
+  
+  <!-- Bundle Builder -->
+  <section id="bundle-builder" class="bundle-builder" aria-labelledby="bundle-title">
+    <div class="section-heading">
+      <p class="eyebrow">Custom Orders</p>
+      <h2 id="bundle-title">Build your perfect bundle.</h2>
+    </div>
+    <div class="bundle-container">
+      <div class="bundle-items">
+        <div class="bundle-item">
+          <img src="https://images.unsplash.com/photo-1589365278144-c9e705f78a9d?auto=format&fit=crop&w=200&q=80" alt="20L Jar">
+          <div class="bundle-item-info">
+            <h3>20L Jar</h3>
+            <p>₹110 each</p>
+          </div>
+          <div class="bundle-controls">
+            <button type="button" class="bundle-btn minus" data-item="jar" aria-label="Remove 20L Jar">-</button>
+            <span id="bundle-jar-qty">0</span>
+            <button type="button" class="bundle-btn plus" data-item="jar" aria-label="Add 20L Jar">+</button>
+          </div>
+        </div>
+        <div class="bundle-item">
+          <img src="https://images.unsplash.com/photo-1602143407151-7111542de6e8?auto=format&fit=crop&w=200&q=80" alt="Box of 500ml Bottles">
+          <div class="bundle-item-info">
+            <h3>Box of 500ml (24x)</h3>
+            <p>₹450 each</p>
+          </div>
+          <div class="bundle-controls">
+            <button type="button" class="bundle-btn minus" data-item="box" aria-label="Remove Box of 500ml">-</button>
+            <span id="bundle-box-qty">0</span>
+            <button type="button" class="bundle-btn plus" data-item="box" aria-label="Add Box of 500ml">+</button>
+          </div>
+        </div>
+      </div>
+      <div class="bundle-summary">
+        <h3>Total Price</h3>
+        <strong id="bundle-total">₹0</strong>
+        <p class="bundle-discount-msg" id="bundle-discount-msg">Add more to unlock a 5% discount!</p>
+        <button class="body-button" id="bundle-checkout-btn" type="button" disabled>Add Bundle to Cart</button>
+      </div>
+    </div>
+  </section>
+\n  <!-- Subscriptions Section -->
   <section id="subscriptions" class="subscriptions" aria-labelledby="subscriptions-title">
     <div class="section-heading">
       <p class="eyebrow">Pricing Plans</p>
@@ -386,7 +443,17 @@
     </div>
   </section>
 
-  <!-- Footer -->
+  
+  <!-- Referral Program -->
+  <section class="referral-program" aria-labelledby="referral-title">
+    <div class="referral-content reveal-on-scroll">
+      <p class="eyebrow">Spread the word</p>
+      <h2 id="referral-title">Give a free jar, get a free jar.</h2>
+      <p>Share AquaPure with your neighbors. When they place their first subscription order, you both get a complimentary 20L jar delivery!</p>
+      <a href="https://wa.me/?text=Hey!%20I%20use%20AquaPure%20for%20my%20water%20delivery.%20Sign%20up%20using%20my%20link%20and%20we%20both%20get%20a%20free%2020L%20jar!%20%28https%3A%2F%2Faquapure.example.com%29" class="body-button" target="_blank">Share on WhatsApp <span>↗</span></a>
+    </div>
+  </section>
+\n  <!-- Footer -->
   <footer>
     <div class="footer-grid">
       <div class="footer-brand">
@@ -432,5 +499,13 @@
       <div><a href="#policies">Privacy policy</a><a href="#policies">Delivery policy</a></div>
     </div>
   </footer>
-</body>
+
+  <div class="sales-toast" id="sales-toast" role="status" aria-live="polite">
+    <div class="sales-icon">🛍️</div>
+    <div class="sales-content">
+      <p id="sales-toast-text"></p>
+      <small>Just now</small>
+    </div>
+  </div>
+  \n</body>
 </html>

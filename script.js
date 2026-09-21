@@ -383,3 +383,115 @@ document.querySelectorAll(newSections).forEach(item => {
     item.classList.add('is-visible');
   }, 100);
 });
+
+// 1. Preloader
+window.addEventListener('load', () => {
+  const preloader = document.getElementById('preloader');
+  if (preloader) {
+    setTimeout(() => {
+      preloader.classList.add('fade-out');
+      setTimeout(() => preloader.remove(), 500); // Remove from DOM after fade
+    }, 1000);
+  }
+});
+
+// 2. Hero Pincode Check
+const heroPincode = document.getElementById('hero-pincode');
+const heroPincodeMsg = document.getElementById('hero-pincode-msg');
+const validPincodes = ['400001', '400053', '400072', '401105']; // Mock list
+if (heroPincode) {
+  heroPincode.addEventListener('input', (e) => {
+    const val = e.target.value.trim();
+    if (val.length === 6) {
+      if (validPincodes.includes(val)) {
+        heroPincodeMsg.textContent = '✓ Excellent! We deliver to your area within 24 hours.';
+        heroPincodeMsg.className = 'hero-pincode-msg success';
+        heroPincode.style.borderColor = '#18794e';
+      } else {
+        heroPincodeMsg.textContent = 'Sorry, we do not deliver to this pincode yet.';
+        heroPincodeMsg.className = 'hero-pincode-msg error';
+        heroPincode.style.borderColor = '#d63031';
+      }
+    } else {
+      heroPincodeMsg.textContent = '';
+      heroPincodeMsg.className = 'hero-pincode-msg';
+      heroPincode.style.borderColor = '';
+    }
+  });
+}
+
+// 3. Bundle Builder
+const bundleState = { jar: 0, box: 0 };
+const prices = { jar: 110, box: 450 };
+const bundleBtns = document.querySelectorAll('.bundle-btn');
+const jarQtyEl = document.getElementById('bundle-jar-qty');
+const boxQtyEl = document.getElementById('bundle-box-qty');
+const totalEl = document.getElementById('bundle-total');
+const discountMsg = document.getElementById('bundle-discount-msg');
+const checkoutBtn = document.getElementById('bundle-checkout-btn');
+
+if (bundleBtns.length > 0) {
+  bundleBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const item = btn.getAttribute('data-item');
+      if (btn.classList.contains('plus')) {
+        bundleState[item]++;
+      } else if (btn.classList.contains('minus') && bundleState[item] > 0) {
+        bundleState[item]--;
+      }
+      
+      jarQtyEl.textContent = bundleState.jar;
+      boxQtyEl.textContent = bundleState.box;
+      
+      let total = (bundleState.jar * prices.jar) + (bundleState.box * prices.box);
+      const totalItems = bundleState.jar + bundleState.box;
+      
+      if (totalItems >= 3) {
+        total = total * 0.95; // 5% discount
+        discountMsg.textContent = '5% Bulk Discount Applied! 🎉';
+        discountMsg.style.color = '#18794e';
+      } else {
+        discountMsg.textContent = 'Add ' + (3 - totalItems) + ' more item(s) to unlock a 5% discount!';
+        discountMsg.style.color = '#e76f51';
+      }
+      
+      totalEl.textContent = '₹' + total.toLocaleString('en-IN');
+      checkoutBtn.disabled = total === 0;
+    });
+  });
+  
+  checkoutBtn.addEventListener('click', () => {
+    showToast('Bundle added to cart! Proceeding to checkout...');
+  });
+}
+
+// 4. Sales Toast Notifications
+const salesToast = document.getElementById('sales-toast');
+const salesToastText = document.getElementById('sales-toast-text');
+const mockNames = ['Rahul from Andheri', 'Priya from Bandra', 'Amit from Thane', 'Sneha from Powai', 'Vikram from Colaba'];
+const mockActions = ['just subscribed to the Monthly Plan!', 'just ordered a 20L Jar!', 'just built a custom bundle!', 'just claimed a referral bonus!'];
+
+if (salesToast) {
+  setInterval(() => {
+    // 30% chance to show a toast every 15 seconds to not be too annoying
+    if (Math.random() > 0.7) {
+      const randomName = mockNames[Math.floor(Math.random() * mockNames.length)];
+      const randomAction = mockActions[Math.floor(Math.random() * mockActions.length)];
+      
+      salesToastText.textContent = `${randomName} ${randomAction} 🎉`;
+      salesToast.classList.add('show');
+      
+      setTimeout(() => {
+        salesToast.classList.remove('show');
+      }, 4000);
+    }
+  }, 15000); // Check every 15s
+}
+
+// Add referral section to revealItems
+document.querySelectorAll('.referral-content').forEach(item => {
+  item.classList.add('reveal-on-scroll');
+  setTimeout(() => {
+    item.classList.add('is-visible');
+  }, 100);
+});
