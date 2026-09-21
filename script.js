@@ -13,9 +13,29 @@ const backToTop = document.querySelector('#back-to-top');
 const toast = document.querySelector('#toast');
 const heroImage = document.querySelector('.hero-image img');
 const stats = document.querySelectorAll('[data-count]');
+const themeToggle = document.querySelector('#theme-toggle');
+
+const savedTheme = localStorage.getItem('aquapure-theme');
+if (savedTheme === 'dark') {
+  document.body.classList.add('dark-theme');
+  themeToggle.textContent = '☀️';
+} else {
+  themeToggle.textContent = '🌙';
+}
+
+themeToggle.addEventListener('click', () => {
+  document.body.classList.toggle('dark-theme');
+  if (document.body.classList.contains('dark-theme')) {
+    localStorage.setItem('aquapure-theme', 'dark');
+    themeToggle.textContent = '☀️';
+  } else {
+    localStorage.setItem('aquapure-theme', 'light');
+    themeToggle.textContent = '🌙';
+  }
+});
 
 const revealItems = document.querySelectorAll(
-  '.about, .benefits, .delivery-steps, .products, .blog, .faq, .contact, .policies, .trust-stats, .benefit-item, .step-item, .product-card, .blog-card, .faq details, .policy-grid details'
+  '.about, .benefits, .delivery-steps, .products, .subscriptions, .testimonials, .blog, .faq, .contact, .policies, .trust-stats, .benefit-item, .step-item, .product-card, .sub-card, .testimonial-card, .blog-card, .faq details, .policy-grid details'
 );
 
 const formatPrice = (value) => `₹${value.toLocaleString('en-IN')}`;
