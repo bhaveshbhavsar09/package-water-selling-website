@@ -1,15 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="AquaPure delivers quality-tested packaged drinking water for homes, offices, and everyday hydration.">
+  <meta name="description"
+    content="AquaPure delivers quality-tested packaged drinking water for homes, offices, and everyday hydration.">
   <meta name="theme-color" content="#073b4c">
-  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='46' fill='%2380edcf'/%3E%3Cpath d='M50 15C38 33 27 45 27 60a23 23 0 0 0 46 0c0-15-11-27-23-45Z' fill='%230077b6'/%3E%3C/svg%3E">
+  <link rel="icon"
+    href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='46' fill='%2380edcf'/%3E%3Cpath d='M50 15C38 33 27 45 27 60a23 23 0 0 0 46 0c0-15-11-27-23-45Z' fill='%230077b6'/%3E%3C/svg%3E">
   <title>AquaPure - Packaged Drinking Water</title>
   <link rel="stylesheet" href="style.css">
   <script src="script.js" defer></script>
 </head>
+
 <body>\n
   <!-- Preloader -->
   <div id="preloader" class="preloader">
@@ -18,7 +22,7 @@
       <div class="ripple"></div>
     </div>
   </div>
-  
+
   <div class="scroll-progress" id="scroll-progress" aria-hidden="true"></div>
   <!-- Header -->
   <header>
@@ -44,8 +48,12 @@
         <option value="mr">MR</option>
       </select>
       <button class="theme-toggle" id="theme-toggle" type="button" aria-label="Toggle dark mode">🌙</button>
-      <button class="cart-button" id="cart-trigger" type="button" aria-label="View shopping cart">Cart <span id="cart-count">0</span></button>
-      <button class="header-button secondary-button track-btn" id="track-order-trigger" type="button" style="background: transparent; color: var(--secondary); border: 1px solid var(--secondary); border-radius: 5px; padding: 9px 16px; font-weight: bold; cursor: pointer; margin-right: 12px;">Track Order</button>
+      <button class="cart-button" id="account-trigger" type="button" aria-label="My Account" style="border: 0; background: transparent; font-size: 1.2rem; cursor: pointer; padding: 0 5px;">👤</button>
+      <button class="cart-button" id="cart-trigger" type="button" aria-label="View shopping cart">Cart <span
+          id="cart-count">0</span></button>
+      <button class="header-button secondary-button track-btn" id="track-order-trigger" type="button"
+        style="background: transparent; color: var(--secondary); border: 1px solid var(--secondary); border-radius: 5px; padding: 9px 16px; font-weight: bold; cursor: pointer; margin-right: 12px;">Track
+        Order</button>
       <a class="header-button" href="#contact">Shop Now</a>
     </div>
   </header>
@@ -55,23 +63,26 @@
     <div class="hero-content">
       <p class="eyebrow" data-i18n="hero_eyebrow">Hydration, delivered fresh</p>
       <h1 data-i18n="hero_title">Pure water for every part of your day.</h1>
-      
-      <p data-i18n="hero_desc">Clean, safe, and refreshing packaged drinking water for home, work, and everywhere in between.</p>
-      
+
+      <p data-i18n="hero_desc">Clean, safe, and refreshing packaged drinking water for home, work, and everywhere in
+        between.</p>
+
       <div class="hero-pincode-check">
-        <input type="text" id="hero-pincode" maxlength="6" placeholder="Enter your Pincode (e.g. 400001)" aria-label="Check delivery pincode">
+        <input type="text" id="hero-pincode" maxlength="6" placeholder="Enter your Pincode (e.g. 400001)"
+          aria-label="Check delivery pincode">
         <p id="hero-pincode-msg" class="hero-pincode-msg"></p>
       </div>
 
       <a href="#products" class="btn"><span data-i18n="hero_btn">Explore Products</span> <span>→</span></a>
     </div>
     <div class="hero-image">
-      <img src="https://images.unsplash.com/photo-1559839914-17aae19cec71?auto=format&fit=crop&w=900&q=85" alt="Clear glass bottle of fresh water beside a glass">
+      <img src="https://images.unsplash.com/photo-1559839914-17aae19cec71?auto=format&fit=crop&w=900&q=85"
+        alt="Clear glass bottle of fresh water beside a glass">
       <div class="hero-badge"><strong>100%</strong><span>quality tested</span></div>
     </div>
   </section>
 
-  
+
 
   <!-- Hydration Quiz -->
   <section id="quiz" class="quiz-section">
@@ -118,7 +129,7 @@
       </div>
     </div>
   </section>
-  
+
   <!-- Source Story Section -->
   <section id="source-story" class="source-story" aria-labelledby="source-title">
     <div class="source-overlay"></div>
@@ -149,7 +160,7 @@
       </div>
     </div>
   </section>
-\n
+  \n
   <!-- Live Water Quality -->
   <section id="quality" class="quality-report">
     <div class="section-heading">
@@ -182,29 +193,29 @@
     </div>
   </section>
 
-<section id="about" class="about">
-  <h2>About Us</h2>
-  <p>
-    At AquaPure, we are committed to delivering safe, hygienic, and refreshing packaged drinking water. 
-    Our mission is to ensure purity in every drop, backed by advanced filtration technology and strict 
-    quality standards. We believe that clean water is not just a necessity, but a foundation for a 
-    healthier lifestyle.
-  </p>
-  <p>
-    Established in 2010, AquaPure has grown to become a trusted name in the packaged drinking water 
-    industry. With a network of distribution across cities and towns, we make sure that our customers 
-    always have access to pure hydration. Our eco-friendly packaging and sustainable practices reflect 
-    our dedication to both health and the environment.
-  </p>
-  <p>
-    Whether it’s a small bottle for your daily commute or a large jar for your home or office, AquaPure 
-    ensures that you stay refreshed, energized, and confident in the quality of water you consume.
-  </p>
-  <div class="section-actions">
-    <a href="#products" class="body-button">View our products <span>→</span></a>
-    <a href="#contact" class="body-button secondary-button">Talk to our team</a>
-  </div>
-</section>
+  <section id="about" class="about">
+    <h2>About Us</h2>
+    <p>
+      At AquaPure, we are committed to delivering safe, hygienic, and refreshing packaged drinking water.
+      Our mission is to ensure purity in every drop, backed by advanced filtration technology and strict
+      quality standards. We believe that clean water is not just a necessity, but a foundation for a
+      healthier lifestyle.
+    </p>
+    <p>
+      Established in 2010, AquaPure has grown to become a trusted name in the packaged drinking water
+      industry. With a network of distribution across cities and towns, we make sure that our customers
+      always have access to pure hydration. Our eco-friendly packaging and sustainable practices reflect
+      our dedication to both health and the environment.
+    </p>
+    <p>
+      Whether it’s a small bottle for your daily commute or a large jar for your home or office, AquaPure
+      ensures that you stay refreshed, energized, and confident in the quality of water you consume.
+    </p>
+    <div class="section-actions">
+      <a href="#products" class="body-button">View our products <span>→</span></a>
+      <a href="#contact" class="body-button secondary-button">Talk to our team</a>
+    </div>
+  </section>
 
 
   <!-- Benefits Section -->
@@ -216,15 +227,24 @@
     <div class="benefit-grid">
       <article class="benefit-item">
         <span class="benefit-icon" aria-hidden="true">✓</span>
-        <div><h3>Quality tested</h3><p>Every batch is checked for safe, reliable refreshment.</p></div>
+        <div>
+          <h3>Quality tested</h3>
+          <p>Every batch is checked for safe, reliable refreshment.</p>
+        </div>
       </article>
       <article class="benefit-item">
         <span class="benefit-icon" aria-hidden="true">↗</span>
-        <div><h3>Delivered fresh</h3><p>Dependable doorstep delivery for home and office routines.</p></div>
+        <div>
+          <h3>Delivered fresh</h3>
+          <p>Dependable doorstep delivery for home and office routines.</p>
+        </div>
       </article>
       <article class="benefit-item">
         <span class="benefit-icon" aria-hidden="true">♻</span>
-        <div><h3>Thoughtfully packed</h3><p>Practical packaging designed with less waste in mind.</p></div>
+        <div>
+          <h3>Thoughtfully packed</h3>
+          <p>Practical packaging designed with less waste in mind.</p>
+        </div>
       </article>
     </div>
   </section>
@@ -243,9 +263,18 @@
       <h2 id="delivery-title">Three easy steps to stay stocked.</h2>
     </div>
     <div class="steps-grid">
-      <article class="step-item"><span>01</span><h3>Pick your size</h3><p>Choose bottles or jars that match your daily routine.</p></article>
-      <article class="step-item"><span>02</span><h3>Place your order</h3><p>Tell us where and when you need your hydration delivered.</p></article>
-      <article class="step-item"><span>03</span><h3>Enjoy fresh water</h3><p>Receive clean, quality-tested water at your doorstep.</p></article>
+      <article class="step-item"><span>01</span>
+        <h3>Pick your size</h3>
+        <p>Choose bottles or jars that match your daily routine.</p>
+      </article>
+      <article class="step-item"><span>02</span>
+        <h3>Place your order</h3>
+        <p>Tell us where and when you need your hydration delivered.</p>
+      </article>
+      <article class="step-item"><span>03</span>
+        <h3>Enjoy fresh water</h3>
+        <p>Receive clean, quality-tested water at your doorstep.</p>
+      </article>
     </div>
   </section>
 
@@ -256,9 +285,34 @@
       <h2>Water that fits your routine.</h2>
     </div>
     <div class="product-grid">
-      <article class="product-card" data-product="500ml Bottle" data-price="20"><img loading="lazy" src="https://images.unsplash.com/photo-1602143407151-7111542de6e8?auto=format&fit=crop&w=700&q=85" alt="500ml AquaPure water bottle"><div class="product-info"><h3>500ml Bottle</h3><p>Perfect for on-the-go hydration.</p><strong>₹20</strong><button class="product-link add-to-cart" type="button">Add to order <span>→</span></button></div></article>
-      <article class="product-card featured-product" data-product="1L Bottle" data-price="35"><span class="product-badge">Most popular</span><img loading="lazy" src="https://images.unsplash.com/photo-1564419320461-6870880221ad?auto=format&fit=crop&w=700&q=85" alt="1 litre AquaPure water bottle"><div class="product-info"><h3>1L Bottle</h3><p>Stay refreshed all day long.</p><strong>₹35</strong><button class="product-link add-to-cart" type="button">Add to order <span>→</span></button></div></article>
-      <article class="product-card" data-product="20L Jar" data-price="110"><img loading="lazy" src="https://images.unsplash.com/photo-1589365278144-c9e705f78a9d?auto=format&fit=crop&w=700&q=85" alt="20 litre AquaPure water jar"><div class="product-info"><h3>20L Jar</h3><p>Ideal for homes and offices.</p><strong>₹110</strong><button class="product-link add-to-cart" type="button">Add to order <span>→</span></button></div></article>
+      <article class="product-card" data-product="500ml Bottle" data-price="20"><img loading="lazy"
+          src="https://images.unsplash.com/photo-1602143407151-7111542de6e8?auto=format&fit=crop&w=700&q=85"
+          alt="500ml AquaPure water bottle">
+        <div class="product-info">
+          <h3>500ml Bottle</h3>
+          <p>Perfect for on-the-go hydration.</p><strong>₹20</strong><button class="product-link add-to-cart"
+            type="button">Add to order <span>→</span></button>
+        </div>
+      </article>
+      <article class="product-card featured-product" data-product="1L Bottle" data-price="35"><span
+          class="product-badge">Most popular</span><img loading="lazy"
+          src="https://images.unsplash.com/photo-1564419320461-6870880221ad?auto=format&fit=crop&w=700&q=85"
+          alt="1 litre AquaPure water bottle">
+        <div class="product-info">
+          <h3>1L Bottle</h3>
+          <p>Stay refreshed all day long.</p><strong>₹35</strong><button class="product-link add-to-cart"
+            type="button">Add to order <span>→</span></button>
+        </div>
+      </article>
+      <article class="product-card" data-product="20L Jar" data-price="110"><img loading="lazy"
+          src="https://images.unsplash.com/photo-1589365278144-c9e705f78a9d?auto=format&fit=crop&w=700&q=85"
+          alt="20 litre AquaPure water jar">
+        <div class="product-info">
+          <h3>20L Jar</h3>
+          <p>Ideal for homes and offices.</p><strong>₹110</strong><button class="product-link add-to-cart"
+            type="button">Add to order <span>→</span></button>
+        </div>
+      </article>
     </div>
     <div class="products-actions">
       <button class="body-button" id="home-order-button" type="button">Order for your home <span>→</span></button>
@@ -266,15 +320,16 @@
     </div>
   </section>
 
-  
-  
+
+
 
   <!-- Corporate B2B Rentals -->
   <section id="corporate" class="corporate-b2b">
     <div class="b2b-content reveal-on-scroll">
       <p class="eyebrow">For Business</p>
       <h2>Elevate your office hydration.</h2>
-      <p>Keep your team energized with our premium water dispensers and bulk delivery plans tailored for modern workspaces.</p>
+      <p>Keep your team energized with our premium water dispensers and bulk delivery plans tailored for modern
+        workspaces.</p>
       <ul class="b2b-features">
         <li>✓ Hot & Cold Dispensers available for rent or purchase</li>
         <li>✓ Dedicated account manager</li>
@@ -286,10 +341,35 @@
       </div>
     </div>
     <div class="b2b-image reveal-on-scroll">
-      <img src="https://images.unsplash.com/photo-1573164713988-8665fc963095?auto=format&fit=crop&w=800&q=80" alt="Office water dispenser" loading="lazy" class="image-loaded">
+      <img src="https://images.unsplash.com/photo-1573164713988-8665fc963095?auto=format&fit=crop&w=800&q=80"
+        alt="Office water dispenser" loading="lazy" class="image-loaded">
     </div>
   </section>
-  
+
+  <!-- Smart IoT Dispenser -->
+  <section id="smart-dispenser" class="smart-dispenser">
+    <div class="iot-content reveal-on-scroll">
+      <p class="eyebrow">Next Gen Hydration</p>
+      <h2>The AquaPure Smart Dispenser.</h2>
+      <p>Connects to your Wi-Fi, tracks your daily water intake, and automatically orders a fresh jar when you're running low.</p>
+      <ul class="iot-features">
+        <li>📱 App controlled temperature</li>
+        <li>🤖 Auto-refill detection</li>
+        <li>💧 Intake tracking & insights</li>
+      </ul>
+      <a href="#contact" class="body-button">Join the Waitlist</a>
+    </div>
+    <div class="iot-visual reveal-on-scroll">
+      <div class="iot-glow"></div>
+      <img src="https://images.unsplash.com/photo-1629904853716-f0bc54eea481?auto=format&fit=crop&w=800&q=80" alt="Futuristic water dispenser" loading="lazy" class="image-loaded">
+      <div class="iot-ui-overlay">
+        <span>Water Level: 15%</span>
+        <div class="iot-bar"><div class="iot-fill"></div></div>
+        <small>Auto-ordering new jar...</small>
+      </div>
+    </div>
+  </section>
+
   <!-- Bundle Builder -->
   <section id="bundle-builder" class="bundle-builder" aria-labelledby="bundle-title">
     <div class="section-heading">
@@ -299,7 +379,8 @@
     <div class="bundle-container">
       <div class="bundle-items">
         <div class="bundle-item">
-          <img src="https://images.unsplash.com/photo-1589365278144-c9e705f78a9d?auto=format&fit=crop&w=200&q=80" alt="20L Jar">
+          <img src="https://images.unsplash.com/photo-1589365278144-c9e705f78a9d?auto=format&fit=crop&w=200&q=80"
+            alt="20L Jar">
           <div class="bundle-item-info">
             <h3>20L Jar</h3>
             <p>₹110 each</p>
@@ -311,7 +392,8 @@
           </div>
         </div>
         <div class="bundle-item">
-          <img src="https://images.unsplash.com/photo-1602143407151-7111542de6e8?auto=format&fit=crop&w=200&q=80" alt="Box of 500ml Bottles">
+          <img src="https://images.unsplash.com/photo-1602143407151-7111542de6e8?auto=format&fit=crop&w=200&q=80"
+            alt="Box of 500ml Bottles">
           <div class="bundle-item-info">
             <h3>Box of 500ml (24x)</h3>
             <p>₹450 each</p>
@@ -331,7 +413,39 @@
       </div>
     </div>
   </section>
-\n  <!-- Subscriptions Section -->
+  
+  <!-- Hydration Recipes -->
+  <section id="recipes" class="recipes-section" aria-labelledby="recipes-title">
+    <div class="section-heading">
+      <p class="eyebrow">Refresh your routine</p>
+      <h2 id="recipes-title">Hydration Recipes.</h2>
+    </div>
+    <div class="recipe-grid">
+      <article class="recipe-card reveal-on-scroll">
+        <img src="https://images.unsplash.com/photo-1513558161293-cdaf765ed2fd?auto=format&fit=crop&w=600&q=80" alt="Lemon Mint Water" loading="lazy" class="image-loaded">
+        <div class="recipe-overlay">
+          <h3>Lemon & Mint Detox</h3>
+          <p>Boost your immune system and refresh your morning.</p>
+        </div>
+      </article>
+      <article class="recipe-card reveal-on-scroll">
+        <img src="https://images.unsplash.com/photo-1622597467836-f3824f469956?auto=format&fit=crop&w=600&q=80" alt="Cucumber Water" loading="lazy" class="image-loaded">
+        <div class="recipe-overlay">
+          <h3>Cucumber Chill</h3>
+          <p>Stay cool and hydrated during hot summer days.</p>
+        </div>
+      </article>
+      <article class="recipe-card reveal-on-scroll">
+        <img src="https://images.unsplash.com/photo-1600271886742-f049cd451bba?auto=format&fit=crop&w=600&q=80" alt="Berry Infusion" loading="lazy" class="image-loaded">
+        <div class="recipe-overlay">
+          <h3>Mixed Berry Blast</h3>
+          <p>Antioxidant-rich infusion for an afternoon energy boost.</p>
+        </div>
+      </article>
+    </div>
+  </section>
+  
+ <!-- Subscriptions Section -->
   <section id="subscriptions" class="subscriptions" aria-labelledby="subscriptions-title">
     <div class="section-heading">
       <p class="eyebrow">Pricing Plans</p>
@@ -359,7 +473,9 @@
           <li>✓ Automated weekly drop-off</li>
           <li>✓ Priority customer support</li>
         </ul>
-        <button class="body-button" type="button" onclick="document.querySelector('#subscription').value='weekly'; document.querySelector('#contact').scrollIntoView();">Subscribe Weekly</button>
+        <button class="body-button" type="button"
+          onclick="document.querySelector('#subscription').value='weekly'; document.querySelector('#contact').scrollIntoView();">Subscribe
+          Weekly</button>
       </article>
       <article class="sub-card reveal-on-scroll">
         <h3>Monthly</h3>
@@ -370,11 +486,34 @@
           <li>✓ Free empty bottle pickup</li>
           <li>✓ Flexible pause/cancel</li>
         </ul>
-        <button class="body-button secondary-button" type="button" onclick="document.querySelector('#subscription').value='monthly'; document.querySelector('#contact').scrollIntoView();">Subscribe Monthly</button>
+        <button class="body-button secondary-button" type="button"
+          onclick="document.querySelector('#subscription').value='monthly'; document.querySelector('#contact').scrollIntoView();">Subscribe
+          Monthly</button>
       </article>
     </div>
   </section>
-\n  
+  
+  <!-- Delivery Zone Map -->
+  <section id="delivery-zones" class="delivery-zones">
+    <div class="section-heading">
+      <p class="eyebrow">Coverage</p>
+      <h2>Find your delivery days.</h2>
+      <p>Click your zone on the map to see when we deliver to your neighborhood.</p>
+    </div>
+    <div class="map-container reveal-on-scroll">
+      <div class="mock-map">
+        <button class="map-pin" data-zone="North" style="top: 20%; left: 50%;">📍 North</button>
+        <button class="map-pin" data-zone="South" style="top: 70%; left: 50%;">📍 South</button>
+        <button class="map-pin" data-zone="East" style="top: 45%; left: 75%;">📍 East</button>
+        <button class="map-pin" data-zone="West" style="top: 45%; left: 25%;">📍 West</button>
+      </div>
+      <div class="zone-info" id="zone-info">
+        <h3>Select a zone</h3>
+        <p>Click a pin to view schedule.</p>
+      </div>
+    </div>
+  </section>
+  
   <!-- Savings Calculator -->
   <section id="calculator" class="calculator" aria-labelledby="calc-title">
     <div class="section-heading">
@@ -402,7 +541,7 @@
       </div>
     </div>
   </section>
-\n  <!-- Blog Section -->
+  \n <!-- Blog Section -->
   <section id="blog" class="blog" aria-labelledby="blog-title">
     <div class="section-heading">
       <p class="eyebrow">Latest Updates</p>
@@ -410,7 +549,9 @@
     </div>
     <div class="blog-grid">
       <article class="blog-card reveal-on-scroll">
-        <img loading="lazy" src="https://images.unsplash.com/photo-1542385262-cea2f5924a0d?auto=format&fit=crop&w=700&q=85" alt="Clean water glass">
+        <img loading="lazy"
+          src="https://images.unsplash.com/photo-1542385262-cea2f5924a0d?auto=format&fit=crop&w=700&q=85"
+          alt="Clean water glass">
         <div class="blog-info">
           <span>March 15, 2026</span>
           <h3>The Importance of Daily Hydration</h3>
@@ -419,7 +560,9 @@
         </div>
       </article>
       <article class="blog-card reveal-on-scroll">
-        <img loading="lazy" src="https://images.unsplash.com/photo-1550505178-005d5b8813bc?auto=format&fit=crop&w=700&q=85" alt="Water distribution">
+        <img loading="lazy"
+          src="https://images.unsplash.com/photo-1550505178-005d5b8813bc?auto=format&fit=crop&w=700&q=85"
+          alt="Water distribution">
         <div class="blog-info">
           <span>February 28, 2026</span>
           <h3>Our Commitment to Eco-Friendly Packaging</h3>
@@ -428,7 +571,9 @@
         </div>
       </article>
       <article class="blog-card reveal-on-scroll">
-        <img loading="lazy" src="https://images.unsplash.com/photo-1620246263590-b38466107386?auto=format&fit=crop&w=700&q=85" alt="Quality testing water">
+        <img loading="lazy"
+          src="https://images.unsplash.com/photo-1620246263590-b38466107386?auto=format&fit=crop&w=700&q=85"
+          alt="Quality testing water">
         <div class="blog-info">
           <span>February 10, 2026</span>
           <h3>Behind the Scenes: Quality Testing</h3>
@@ -439,7 +584,7 @@
     </div>
   </section>
 
-  
+
   <!-- Testimonials Section -->
   <section class="testimonials" aria-labelledby="testimonials-title">
     <div class="section-heading">
@@ -449,12 +594,14 @@
     <div class="testimonial-grid">
       <article class="testimonial-card reveal-on-scroll">
         <div class="stars">★★★★★</div>
-        <p>"AquaPure's weekly delivery has completely changed our office. The water is crisp, and they are never late."</p>
+        <p>"AquaPure's weekly delivery has completely changed our office. The water is crisp, and they are never late."
+        </p>
         <strong>- Priya S., Office Manager</strong>
       </article>
       <article class="testimonial-card reveal-on-scroll">
         <div class="stars">★★★★★</div>
-        <p>"I love the eco-friendly packaging and the taste is fantastic. Highly recommend the monthly subscription!"</p>
+        <p>"I love the eco-friendly packaging and the taste is fantastic. Highly recommend the monthly subscription!"
+        </p>
         <strong>- Rahul K., Homeowner</strong>
       </article>
       <article class="testimonial-card reveal-on-scroll">
@@ -464,7 +611,7 @@
       </article>
     </div>
   </section>
-\n  <!-- FAQ Section -->
+  \n <!-- FAQ Section -->
   <section class="faq" aria-labelledby="faq-title">
     <div class="section-heading">
       <p class="eyebrow">Need to know</p>
@@ -474,9 +621,20 @@
       <input type="text" id="faq-search" class="faq-search" placeholder="Search questions..." aria-label="Search FAQs">
     </div>
     <div class="faq-list">
-      <details><summary>Where do you deliver?</summary><p>We deliver across nearby cities and towns. Share your location in the order form and our team will confirm availability.</p></details>
-      <details><summary>How quickly can I receive my order?</summary><p>Most local orders arrive within one business day. We will confirm the delivery slot after receiving your request.</p></details>
-      <details><summary>Can I order for an office?</summary><p>Yes. Choose the 20L jar for regular office supply or contact us for a tailored bulk quote.</p></details>
+      <details>
+        <summary>Where do you deliver?</summary>
+        <p>We deliver across nearby cities and towns. Share your location in the order form and our team will confirm
+          availability.</p>
+      </details>
+      <details>
+        <summary>How quickly can I receive my order?</summary>
+        <p>Most local orders arrive within one business day. We will confirm the delivery slot after receiving your
+          request.</p>
+      </details>
+      <details>
+        <summary>Can I order for an office?</summary>
+        <p>Yes. Choose the 20L jar for regular office supply or contact us for a tailored bulk quote.</p>
+      </details>
     </div>
   </section>
 
@@ -503,7 +661,8 @@
       <label for="contact-phone">Phone number</label>
       <input id="contact-phone" name="phone" type="tel" placeholder="Your Phone Number" required>
       <label for="contact-address">Delivery address</label>
-      <textarea id="contact-address" name="address" placeholder="House number, street, city" rows="3" required></textarea>
+      <textarea id="contact-address" name="address" placeholder="House number, street, city" rows="3"
+        required></textarea>
       <label for="delivery-date">Preferred delivery date</label>
       <input id="delivery-date" name="deliveryDate" type="date" required>
       <label for="subscription">Order type</label>
@@ -526,8 +685,15 @@
 
   <!-- Cart Dialog -->
   <dialog class="cart-dialog" id="cart-dialog" aria-labelledby="cart-title">
-    <div class="dialog-header"><div><p class="eyebrow">Your order</p><h2 id="cart-title">Shopping cart</h2></div><button class="dialog-close" id="cart-close" type="button" aria-label="Close shopping cart">×</button></div>
-    <div class="cart-items" id="cart-items"><p class="empty-cart">Your cart is empty. Add a product to get started.</p></div>
+    <div class="dialog-header">
+      <div>
+        <p class="eyebrow">Your order</p>
+        <h2 id="cart-title">Shopping cart</h2>
+      </div><button class="dialog-close" id="cart-close" type="button" aria-label="Close shopping cart">×</button>
+    </div>
+    <div class="cart-items" id="cart-items">
+      <p class="empty-cart">Your cart is empty. Add a product to get started.</p>
+    </div>
     <div class="cart-rewards" id="cart-rewards" style="display: none;">
       <div class="rewards-icon">🎁</div>
       <div class="rewards-text">
@@ -544,7 +710,10 @@
   <!-- Order Tracking Dialog -->
   <dialog class="tracking-dialog" id="tracking-dialog" aria-labelledby="tracking-title">
     <div class="dialog-header">
-      <div><p class="eyebrow" id="tracking-order-id">Order #AQ-98231</p><h2 id="tracking-title">Track Order</h2></div>
+      <div>
+        <p class="eyebrow" id="tracking-order-id">Order #AQ-98231</p>
+        <h2 id="tracking-title">Track Order</h2>
+      </div>
       <button class="dialog-close" id="tracking-close" type="button" aria-label="Close tracking">×</button>
     </div>
     <div class="tracking-timeline">
@@ -578,40 +747,82 @@
       </div>
     </div>
   </dialog>
-  
+
   <a class="whatsapp-float" href="https://wa.me/919876543210" target="_blank" aria-label="Chat on WhatsApp">
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" fill="currentColor"><path d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zm-157 341.6c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3L72 359.2l-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-32.6-16.3-54-29.1-75.5-66-2.1-3.6-2.1-5.6 0-10 1.8-3.8 5.5-6.5 8.3-10.2 2.8-3.7 3.7-6.5 5.5-10.9 1.9-4.6 .9-8.8-.9-12.5s-12.5-30.2-17.1-41.3c-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.8 35.2 15.2 49 16.5 66.6 13.9 10.7-1.6 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.5-5-3.9-10.5-6.6z"/></svg>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" fill="currentColor">
+      <path
+        d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zm-157 341.6c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3L72 359.2l-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-32.6-16.3-54-29.1-75.5-66-2.1-3.6-2.1-5.6 0-10 1.8-3.8 5.5-6.5 8.3-10.2 2.8-3.7 3.7-6.5 5.5-10.9 1.9-4.6 .9-8.8-.9-12.5s-12.5-30.2-17.1-41.3c-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.8 35.2 15.2 49 16.5 66.6 13.9 10.7-1.6 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.5-5-3.9-10.5-6.6z" />
+    </svg>
   </a>
-\n  <button class="back-to-top" id="back-to-top" type="button" aria-label="Back to top">↑</button>
+  \n <button class="back-to-top" id="back-to-top" type="button" aria-label="Back to top">↑</button>
   <a class="mobile-order-button" href="#products">Order now <span>→</span></a>
 
   <!-- Policies Section -->
   <section class="policies" id="policies" aria-labelledby="policies-title">
-    <div class="section-heading"><p class="eyebrow">Good to know</p><h2 id="policies-title">Our policies.</h2></div>
+    <div class="section-heading">
+      <p class="eyebrow">Good to know</p>
+      <h2 id="policies-title">Our policies.</h2>
+    </div>
     <div class="policy-grid">
-      <details><summary>Privacy policy</summary><p>We use your contact and delivery details only to respond to your request and arrange your order. We do not sell customer information.</p></details>
-      <details><summary>Cancellation policy</summary><p>Contact our team as soon as possible to change or cancel an order before it is dispatched. We will confirm any applicable refund directly.</p></details>
-      <details><summary>Delivery policy</summary><p>Delivery timing depends on service availability and your selected area. Our team confirms the final delivery slot before dispatch.</p></details>
+      <details>
+        <summary>Privacy policy</summary>
+        <p>We use your contact and delivery details only to respond to your request and arrange your order. We do not
+          sell customer information.</p>
+      </details>
+      <details>
+        <summary>Cancellation policy</summary>
+        <p>Contact our team as soon as possible to change or cancel an order before it is dispatched. We will confirm
+          any applicable refund directly.</p>
+      </details>
+      <details>
+        <summary>Delivery policy</summary>
+        <p>Delivery timing depends on service availability and your selected area. Our team confirms the final delivery
+          slot before dispatch.</p>
+      </details>
     </div>
   </section>
 
-  
+
+  <!-- Hydration Challenge -->
+  <section id="challenge" class="challenge-section">
+    <div class="challenge-content reveal-on-scroll">
+      <div class="challenge-badge">🏆</div>
+      <h2>30-Day Hydration Challenge</h2>
+      <p>Drink 2 liters a day for 30 days. Track your progress and unlock a free month of delivery!</p>
+      <form id="challenge-form" class="challenge-form">
+        <input type="email" placeholder="Enter your email to join" required>
+        <button type="submit" class="body-button">Accept Challenge</button>
+      </form>
+      <div id="challenge-success" class="challenge-success" style="display: none;">
+        <h3>Challenge Accepted! 🎉</h3>
+        <p>Check your email for the tracking dashboard.</p>
+        <div class="challenge-progress-mock">
+          <span>Day 1 of 30</span>
+          <div class="c-bar"><div class="c-fill"></div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- Referral Program -->
   <section class="referral-program" aria-labelledby="referral-title">
     <div class="referral-content reveal-on-scroll">
       <p class="eyebrow">Spread the word</p>
       <h2 id="referral-title">Give a free jar, get a free jar.</h2>
-      <p>Share AquaPure with your neighbors. When they place their first subscription order, you both get a complimentary 20L jar delivery!</p>
-      <a href="https://wa.me/?text=Hey!%20I%20use%20AquaPure%20for%20my%20water%20delivery.%20Sign%20up%20using%20my%20link%20and%20we%20both%20get%20a%20free%2020L%20jar!%20%28https%3A%2F%2Faquapure.example.com%29" class="body-button" target="_blank">Share on WhatsApp <span>↗</span></a>
+      <p>Share AquaPure with your neighbors. When they place their first subscription order, you both get a
+        complimentary 20L jar delivery!</p>
+      <a href="https://wa.me/?text=Hey!%20I%20use%20AquaPure%20for%20my%20water%20delivery.%20Sign%20up%20using%20my%20link%20and%20we%20both%20get%20a%20free%2020L%20jar!%20%28https%3A%2F%2Faquapure.example.com%29"
+        class="body-button" target="_blank">Share on WhatsApp <span>↗</span></a>
     </div>
   </section>
-\n
+  \n
   <!-- Sustainability Dashboard -->
   <section id="impact" class="sustainability" aria-labelledby="impact-title">
     <div class="sustainability-content reveal-on-scroll">
       <p class="eyebrow">Our Impact</p>
       <h2 id="impact-title">Hydration that cares for the planet.</h2>
-      <p>Through our eco-friendly packaging and empty bottle return program, we're making a measurable difference together.</p>
+      <p>Through our eco-friendly packaging and empty bottle return program, we're making a measurable difference
+        together.</p>
     </div>
     <div class="impact-stats">
       <div class="impact-stat reveal-on-scroll">
@@ -686,5 +897,41 @@
       <small>Just now</small>
     </div>
   </div>
-  \n</body>
+  \n
+  <!-- My Account Dialog -->
+  <dialog class="account-dialog" id="account-dialog" aria-labelledby="account-title">
+    <div class="dialog-header">
+      <div><p class="eyebrow">Welcome back, Rahul</p><h2 id="account-title">My Account</h2></div>
+      <button class="dialog-close" id="account-close" type="button" aria-label="Close account">×</button>
+    </div>
+    <div class="account-details">
+      <div class="subscription-status active">
+        <h3>Active Plan: Monthly 20L Jar</h3>
+        <p>Next delivery: <strong>Tomorrow, 9 AM - 12 PM</strong></p>
+      </div>
+      <div class="account-actions">
+        <button class="body-button" id="skip-delivery-btn" type="button">Skip Next Delivery</button>
+        <button class="body-button secondary-button" type="button">Pause Subscription</button>
+      </div>
+    </div>
+  </dialog>
+
+  <!-- Live Chat Widget -->
+  <div class="chat-widget" id="chat-widget">
+    <div class="chat-header">
+      <strong>AquaSupport</strong>
+      <button id="chat-close" class="chat-close">×</button>
+    </div>
+    <div class="chat-messages" id="chat-messages">
+      <div class="msg bot">Hi! How can I help you hydrate today?</div>
+    </div>
+    <div class="chat-input-area">
+      <input type="text" id="chat-input" placeholder="Type a message...">
+      <button id="chat-send">➤</button>
+    </div>
+  </div>
+  <button class="chat-trigger" id="chat-trigger" aria-label="Open live chat">💬</button>
+
+</body>
+
 </html>

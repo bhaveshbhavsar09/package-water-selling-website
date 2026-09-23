@@ -651,3 +651,117 @@ if ('IntersectionObserver' in window && ecoStats.length) {
   }, { threshold: 0.4 });
   ecoObserver.observe(document.querySelector('.sustainability'));
 }
+
+// 10. Account Dialog Logic
+const accountTrigger = document.getElementById('account-trigger');
+const accountDialog = document.getElementById('account-dialog');
+const accountClose = document.getElementById('account-close');
+const skipDeliveryBtn = document.getElementById('skip-delivery-btn');
+
+if (accountTrigger && accountDialog) {
+  accountTrigger.addEventListener('click', () => {
+    if (typeof accountDialog.showModal === 'function') {
+      accountDialog.showModal();
+    } else {
+      accountDialog.setAttribute('open', '');
+    }
+  });
+  
+  accountClose.addEventListener('click', () => {
+    accountDialog.close();
+  });
+  
+  skipDeliveryBtn.addEventListener('click', () => {
+    showToast('Your next delivery has been skipped.');
+    skipDeliveryBtn.textContent = 'Delivery Skipped';
+    skipDeliveryBtn.disabled = true;
+  });
+}
+
+// 11. Delivery Zone Map Logic
+const mapPins = document.querySelectorAll('.map-pin');
+const zoneInfo = document.getElementById('zone-info');
+
+const zoneSchedules = {
+  'North': 'Deliveries on <strong>Mondays & Thursdays</strong>.',
+  'South': 'Deliveries on <strong>Tuesdays & Fridays</strong>.',
+  'East': 'Deliveries on <strong>Wednesdays & Saturdays</strong>.',
+  'West': 'Deliveries on <strong>Mondays & Wednesdays</strong>.'
+};
+
+mapPins.forEach(pin => {
+  pin.addEventListener('click', () => {
+    mapPins.forEach(p => p.classList.remove('active'));
+    pin.classList.add('active');
+    
+    const zone = pin.getAttribute('data-zone');
+    zoneInfo.innerHTML = `<h3>${zone} Zone</h3><p>${zoneSchedules[zone]}</p>`;
+  });
+});
+
+// 12. Hydration Challenge Form
+const challengeForm = document.getElementById('challenge-form');
+const challengeSuccess = document.getElementById('challenge-success');
+const cFill = document.querySelector('.c-fill');
+
+if (challengeForm) {
+  challengeForm.addEventListener('submit', (e) => {
+    e.preventDefault();
+    challengeForm.style.display = 'none';
+    challengeSuccess.style.display = 'block';
+    
+    // Animate progress bar slightly
+    setTimeout(() => {
+      if(cFill) cFill.style.width = '20%';
+    }, 100);
+  });
+}
+
+// 13. Live Chat Widget Logic
+const chatTrigger = document.getElementById('chat-trigger');
+const chatWidget = document.getElementById('chat-widget');
+const chatClose = document.getElementById('chat-close');
+const chatSend = document.getElementById('chat-send');
+const chatInput = document.getElementById('chat-input');
+const chatMessages = document.getElementById('chat-messages');
+
+if (chatTrigger && chatWidget) {
+  chatTrigger.addEventListener('click', () => {
+    chatWidget.classList.add('active');
+    chatTrigger.style.display = 'none';
+  });
+  
+  chatClose.addEventListener('click', () => {
+    chatWidget.classList.remove('active');
+    setTimeout(() => chatTrigger.style.display = 'grid', 300);
+  });
+  
+  function sendMessage() {
+    const text = chatInput.value.trim();
+    if (!text) return;
+    
+    // Add User msg
+    const userMsg = document.createElement('div');
+    userMsg.className = 'msg user';
+    userMsg.textContent = text;
+    chatMessages.appendChild(userMsg);
+    chatInput.value = '';
+    
+    // Scroll to bottom
+    chatMessages.scrollTop = chatMessages.scrollHeight;
+    
+    // Bot reply mock
+    setTimeout(() => {
+      const botMsg = document.createElement('div');
+      botMsg.className = 'msg bot';
+      botMsg.textContent = 'Thanks for your message! Our human agents are currently away, but they will email you soon.';
+      chatMessages.appendChild(botMsg);
+      chatMessages.scrollTop = chatMessages.scrollHeight;
+    }, 1000);
+  }
+  
+  chatSend.addEventListener('click', sendMessage);
+  chatInput.addEventListener('keypress', (e) => {
+    if (e.key === 'Enter') sendMessage();
+  });
+}

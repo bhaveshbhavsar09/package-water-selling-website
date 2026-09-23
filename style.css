@@ -677,3 +677,85 @@ body.dark-theme .rewards-text p { color: #e0e0e0; }
   .impact-stats { grid-template-columns: 1fr; gap: 40px; }
   .quiz-result-actions { flex-direction: column; }
 }
+
+/* Smart IoT Dispenser */
+.smart-dispenser { display: grid; grid-template-columns: 1fr 1.2fr; gap: 50px; background: #0a1118; color: #fff; padding: 60px; border-radius: 16px; margin: 60px auto; max-width: 1100px; align-items: center; overflow: hidden; position: relative; }
+.smart-dispenser .eyebrow { color: #00d2ff; }
+.smart-dispenser h2 { color: #fff; }
+.iot-features { list-style: none; margin: 30px 0; }
+.iot-features li { margin-bottom: 15px; font-size: 1.1rem; color: #a1b0c0; display: flex; align-items: center; gap: 10px; }
+.iot-visual { position: relative; border-radius: 12px; overflow: hidden; }
+.iot-glow { position: absolute; width: 200px; height: 200px; background: #00d2ff; filter: blur(80px); opacity: 0.3; top: 50%; left: 50%; transform: translate(-50%, -50%); border-radius: 50%; }
+.iot-visual img { width: 100%; height: 400px; object-fit: cover; opacity: 0.8; mix-blend-mode: luminosity; }
+.iot-ui-overlay { position: absolute; bottom: 30px; left: 30px; right: 30px; background: rgba(0,0,0,0.7); backdrop-filter: blur(10px); padding: 20px; border-radius: 12px; border: 1px solid rgba(255,255,255,0.1); }
+.iot-bar { width: 100%; height: 6px; background: #333; margin: 10px 0; border-radius: 3px; overflow: hidden; }
+.iot-fill { width: 15%; height: 100%; background: #00d2ff; box-shadow: 0 0 10px #00d2ff; animation: pulseGlow 2s infinite; }
+@keyframes pulseGlow { 0% { opacity: 0.7; } 50% { opacity: 1; } 100% { opacity: 0.7; } }
+
+/* Hydration Recipes */
+.recipes-section { max-width: 1200px; margin: 60px auto; padding: 0 20px; }
+.recipe-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+.recipe-card { position: relative; border-radius: 12px; overflow: hidden; height: 350px; cursor: pointer; }
+.recipe-card img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease; }
+.recipe-card:hover img { transform: scale(1.05); }
+.recipe-overlay { position: absolute; bottom: 0; left: 0; right: 0; background: linear-gradient(transparent, rgba(0,0,0,0.8)); padding: 30px 20px 20px; color: white; transform: translateY(20px); transition: transform 0.3s ease; }
+.recipe-card:hover .recipe-overlay { transform: translateY(0); }
+.recipe-overlay h3 { margin-bottom: 5px; font-size: 1.2rem; }
+.recipe-overlay p { font-size: 0.9rem; color: #ddd; opacity: 0; transition: opacity 0.3s 0.1s ease; }
+.recipe-card:hover .recipe-overlay p { opacity: 1; }
+
+/* Delivery Zone Map */
+.delivery-zones { max-width: 1000px; margin: 60px auto; padding: 0 20px; text-align: center; }
+.map-container { display: grid; grid-template-columns: 2fr 1fr; gap: 30px; background: var(--bg-alt); padding: 20px; border-radius: 12px; border: 1px solid var(--border-color); }
+.mock-map { position: relative; height: 400px; background: #e2e8f0; border-radius: 8px; background-image: radial-gradient(#cbd5e1 1px, transparent 1px); background-size: 20px 20px; }
+body.dark-theme .mock-map { background-color: #1e293b; background-image: radial-gradient(#334155 1px, transparent 1px); }
+.map-pin { position: absolute; background: white; border: 2px solid var(--primary); padding: 5px 12px; border-radius: 20px; font-weight: bold; color: var(--text-heading); cursor: pointer; box-shadow: 0 4px 10px rgba(0,0,0,0.1); transition: all 0.2s; transform: translate(-50%, -50%); }
+.map-pin:hover, .map-pin.active { background: var(--primary); color: white; transform: translate(-50%, -50%) scale(1.1); z-index: 10; }
+.zone-info { background: var(--bg-section); padding: 30px; border-radius: 8px; display: flex; flex-direction: column; justify-content: center; border: 1px solid var(--border-light); }
+
+/* Hydration Challenge */
+.challenge-section { max-width: 800px; margin: 60px auto; padding: 0 20px; text-align: center; }
+.challenge-content { background: linear-gradient(135deg, #f0fbf8 0%, #e1f6fd 100%); padding: 50px; border-radius: 20px; box-shadow: 0 15px 40px rgba(0,119,182,0.1); border: 1px solid #d0f0f5; position: relative; overflow: hidden; }
+body.dark-theme .challenge-content { background: linear-gradient(135deg, #102a33 0%, #0c1f2e 100%); border-color: #1b3d4a; }
+.challenge-badge { font-size: 4rem; margin-bottom: 20px; animation: bounceIn 1s cubic-bezier(0.175, 0.885, 0.32, 1.275); }
+.challenge-form { display: flex; gap: 10px; justify-content: center; margin-top: 30px; }
+.challenge-form input { flex: 1; max-width: 300px; padding: 12px 20px; border-radius: 25px; border: 1px solid var(--border-color); outline: none; background: var(--bg-section); color: var(--text-body); }
+.challenge-form button { border-radius: 25px; }
+.challenge-success { margin-top: 20px; }
+.challenge-progress-mock { margin-top: 20px; text-align: left; background: var(--bg-section); padding: 15px; border-radius: 12px; }
+.c-bar { height: 8px; background: var(--border-color); border-radius: 4px; margin-top: 10px; overflow: hidden; }
+.c-fill { height: 100%; width: 0%; background: #25D366; transition: width 1s ease; }
+@keyframes bounceIn { 0% { transform: scale(0); } 50% { transform: scale(1.2); } 100% { transform: scale(1); } }
+
+/* My Account Dialog */
+.account-dialog { width: min(92vw, 450px); padding: 30px; border: 0; border-radius: 12px; color: var(--text-body); box-shadow: 0 24px 80px rgba(0,0,0,.3); }
+.account-dialog::backdrop { background: rgba(0,0,0,.6); backdrop-filter: blur(4px); }
+.subscription-status { background: #f0fbf8; border: 1px solid #c2ece2; padding: 20px; border-radius: 8px; margin: 20px 0; }
+body.dark-theme .subscription-status { background: #0b2e26; border-color: #164a3e; }
+.account-actions { display: flex; flex-direction: column; gap: 10px; }
+.account-actions button { width: 100%; }
+
+/* Chat Widget */
+.chat-trigger { position: fixed; right: 24px; bottom: 90px; width: 60px; height: 60px; border-radius: 50%; background: var(--primary); color: white; font-size: 1.5rem; border: none; cursor: pointer; box-shadow: 0 10px 20px rgba(0,119,182,0.3); z-index: 100; display: grid; place-items: center; transition: transform 0.3s; }
+.chat-trigger:hover { transform: scale(1.1); }
+.chat-widget { position: fixed; right: 24px; bottom: 160px; width: 320px; background: var(--bg-section); border-radius: 12px; box-shadow: 0 15px 40px rgba(0,0,0,0.2); border: 1px solid var(--border-color); z-index: 100; display: flex; flex-direction: column; opacity: 0; pointer-events: none; transform: translateY(20px); transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275); }
+.chat-widget.active { opacity: 1; pointer-events: all; transform: translateY(0); }
+.chat-header { background: var(--primary); color: white; padding: 15px 20px; border-radius: 11px 11px 0 0; display: flex; justify-content: space-between; align-items: center; }
+.chat-close { background: none; border: none; color: white; font-size: 1.5rem; cursor: pointer; line-height: 1; }
+.chat-messages { padding: 20px; height: 250px; overflow-y: auto; display: flex; flex-direction: column; gap: 10px; }
+.msg { padding: 10px 15px; border-radius: 15px; font-size: 0.9rem; max-width: 85%; }
+.msg.bot { background: var(--bg-alt); color: var(--text-heading); align-self: flex-start; border-bottom-left-radius: 5px; }
+.msg.user { background: var(--primary); color: white; align-self: flex-end; border-bottom-right-radius: 5px; }
+.chat-input-area { padding: 15px; border-top: 1px solid var(--border-light); display: flex; gap: 10px; }
+.chat-input-area input { flex: 1; padding: 10px 15px; border-radius: 20px; border: 1px solid var(--border-color); outline: none; background: var(--bg-alt); color: var(--text-body); }
+.chat-input-area button { background: var(--primary); color: white; border: none; width: 36px; height: 36px; border-radius: 50%; cursor: pointer; display: grid; place-items: center; }
+
+@media (max-width: 800px) {
+  .quality-grid { grid-template-columns: 1fr; }
+  .corporate-b2b { grid-template-columns: 1fr; }
+  .impact-stats { grid-template-columns: 1fr; gap: 40px; }
+  .quiz-result-actions { flex-direction: column; }
+  .smart-dispenser, .map-container, .recipe-grid { grid-template-columns: 1fr; }
+  .chat-widget { right: 15px; bottom: 85px; width: calc(100vw - 30px); }
+  .chat-trigger { right: 15px; bottom: 15px; }
+}
