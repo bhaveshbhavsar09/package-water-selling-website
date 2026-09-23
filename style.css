@@ -629,7 +629,7 @@ footer {
 @keyframes pulseGreen { 0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7); } 70% { transform: scale(1); box-shadow: 0 0 0 6px rgba(37, 211, 102, 0); } 100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); } }
 
 /* Corporate B2B */
-.corporate-b2b { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; max-width: 1100px; margin: 40px auto; align-items: center; text-align: left; padding: 40px; background: var(--bg-alt); border-radius: 12px; }
+.corporate-b2b { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; max-width: 1100px; align-items: center; text-align: left; background: var(--bg-alt); border-radius: 12px; padding: 40px; }
 .b2b-content h2 { margin-bottom: 15px; font-size: clamp(2rem, 3vw, 2.5rem); }
 .b2b-features { list-style: none; margin: 20px 0 30px; }
 .b2b-features li { margin-bottom: 10px; font-weight: bold; color: var(--text-heading); }
@@ -637,7 +637,7 @@ footer {
 .b2b-image img { width: 100%; height: 350px; object-fit: cover; border-radius: 8px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
 
 /* Sustainability Dashboard */
-.sustainability { background: var(--bg-header); color: var(--text-header); padding: 80px 20px; margin-top: 40px; }
+.sustainability { background: var(--bg-header); color: var(--text-header); padding: 80px 20px; }
 .sustainability-content { max-width: 600px; margin: 0 auto 40px; }
 .sustainability-content .eyebrow { color: var(--secondary); }
 .sustainability-content h2 { color: white; }
@@ -679,7 +679,7 @@ body.dark-theme .rewards-text p { color: #e0e0e0; }
 }
 
 /* Smart IoT Dispenser */
-.smart-dispenser { display: grid; grid-template-columns: 1fr 1.2fr; gap: 50px; background: #0a1118; color: #fff; padding: 60px; border-radius: 16px; margin: 60px auto; max-width: 1100px; align-items: center; overflow: hidden; position: relative; }
+.smart-dispenser { display: grid; grid-template-columns: 1fr 1.2fr; gap: 50px; background: #0a1118; color: #fff; padding: 40px; border-radius: 16px; align-items: center; overflow: hidden; position: relative; }
 .smart-dispenser .eyebrow { color: #00d2ff; }
 .smart-dispenser h2 { color: #fff; }
 .iot-features { list-style: none; margin: 30px 0; }
@@ -693,7 +693,7 @@ body.dark-theme .rewards-text p { color: #e0e0e0; }
 @keyframes pulseGlow { 0% { opacity: 0.7; } 50% { opacity: 1; } 100% { opacity: 0.7; } }
 
 /* Hydration Recipes */
-.recipes-section { max-width: 1200px; margin: 60px auto; padding: 0 20px; }
+.recipes-section { padding: 40px 0; }
 .recipe-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
 .recipe-card { position: relative; border-radius: 12px; overflow: hidden; height: 350px; cursor: pointer; }
 .recipe-card img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease; }
@@ -705,7 +705,7 @@ body.dark-theme .rewards-text p { color: #e0e0e0; }
 .recipe-card:hover .recipe-overlay p { opacity: 1; }
 
 /* Delivery Zone Map */
-.delivery-zones { max-width: 1000px; margin: 60px auto; padding: 0 20px; text-align: center; }
+.delivery-zones { text-align: center; }
 .map-container { display: grid; grid-template-columns: 2fr 1fr; gap: 30px; background: var(--bg-alt); padding: 20px; border-radius: 12px; border: 1px solid var(--border-color); }
 .mock-map { position: relative; height: 400px; background: #e2e8f0; border-radius: 8px; background-image: radial-gradient(#cbd5e1 1px, transparent 1px); background-size: 20px 20px; }
 body.dark-theme .mock-map { background-color: #1e293b; background-image: radial-gradient(#334155 1px, transparent 1px); }
@@ -714,7 +714,7 @@ body.dark-theme .mock-map { background-color: #1e293b; background-image: radial-
 .zone-info { background: var(--bg-section); padding: 30px; border-radius: 8px; display: flex; flex-direction: column; justify-content: center; border: 1px solid var(--border-light); }
 
 /* Hydration Challenge */
-.challenge-section { max-width: 800px; margin: 60px auto; padding: 0 20px; text-align: center; }
+.challenge-section { text-align: center; }
 .challenge-content { background: linear-gradient(135deg, #f0fbf8 0%, #e1f6fd 100%); padding: 50px; border-radius: 20px; box-shadow: 0 15px 40px rgba(0,119,182,0.1); border: 1px solid #d0f0f5; position: relative; overflow: hidden; }
 body.dark-theme .challenge-content { background: linear-gradient(135deg, #102a33 0%, #0c1f2e 100%); border-color: #1b3d4a; }
 .challenge-badge { font-size: 4rem; margin-bottom: 20px; animation: bounceIn 1s cubic-bezier(0.175, 0.885, 0.32, 1.275); }
@@ -752,10 +752,12 @@ body.dark-theme .subscription-status { background: #0b2e26; border-color: #164a3
 
 @media (max-width: 800px) {
   .quality-grid { grid-template-columns: 1fr; }
-  .corporate-b2b { grid-template-columns: 1fr; }
+  .corporate-b2b { grid-template-columns: 1fr; padding: 20px; }
   .impact-stats { grid-template-columns: 1fr; gap: 40px; }
   .quiz-result-actions { flex-direction: column; }
   .smart-dispenser, .map-container, .recipe-grid { grid-template-columns: 1fr; }
+  .smart-dispenser { padding: 20px; }
+  .challenge-content { padding: 30px 20px; }
   .chat-widget { right: 15px; bottom: 85px; width: calc(100vw - 30px); }
   .chat-trigger { right: 15px; bottom: 15px; }
 }
