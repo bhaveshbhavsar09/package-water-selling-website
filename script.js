@@ -495,3 +495,159 @@ document.querySelectorAll('.referral-content').forEach(item => {
     item.classList.add('is-visible');
   }, 100);
 });
+
+// 5. Hydration Quiz Logic
+const quizSteps = document.querySelectorAll('.quiz-step');
+const quizOptions = document.querySelectorAll('.quiz-option');
+const quizProgressBar = document.getElementById('quiz-progress-bar');
+const quizResult = document.getElementById('quiz-result');
+const quizRecommendation = document.getElementById('quiz-recommendation');
+const quizResetBtn = document.getElementById('quiz-reset');
+const quizAddBtn = document.getElementById('quiz-add-btn');
+
+let currentStep = 1;
+const userAnswers = {};
+
+if (quizSteps.length > 0) {
+  quizOptions.forEach(option => {
+    option.addEventListener('click', (e) => {
+      const value = e.target.getAttribute('data-value');
+      userAnswers[`step${currentStep}`] = value;
+      
+      // Go to next step
+      document.querySelector(`.quiz-step[data-step="${currentStep}"]`).classList.remove('active');
+      currentStep++;
+      
+      if (currentStep <= quizSteps.length) {
+        document.querySelector(`.quiz-step[data-step="${currentStep}"]`).classList.add('active');
+        quizProgressBar.style.width = `${(currentStep / quizSteps.length) * 100}%`;
+      } else {
+        // Show result
+        quizProgressBar.style.width = '100%';
+        let plan = '';
+        if (userAnswers.step1 === '6+' || userAnswers.step3 === 'office') {
+          plan = '20L Jar (Weekly Subscription)';
+          quizAddBtn.setAttribute('data-product', '20L Jar');
+          quizAddBtn.setAttribute('data-price', '110');
+        } else if (userAnswers.step2 === 'yes') {
+          plan = 'Box of 500ml (24x) (Monthly)';
+          quizAddBtn.setAttribute('data-product', 'Box of 500ml (24x)');
+          quizAddBtn.setAttribute('data-price', '450');
+        } else {
+          plan = '1L Bottle (Monthly Subscription)';
+          quizAddBtn.setAttribute('data-product', '1L Bottle');
+          quizAddBtn.setAttribute('data-price', '35');
+        }
+        
+        quizRecommendation.textContent = plan;
+        quizResult.style.display = 'block';
+      }
+    });
+  });
+
+  quizResetBtn.addEventListener('click', () => {
+    quizResult.style.display = 'none';
+    currentStep = 1;
+    document.querySelectorAll('.quiz-step').forEach(step => step.classList.remove('active'));
+    document.querySelector('.quiz-step[data-step="1"]').classList.add('active');
+    quizProgressBar.style.width = '33%';
+  });
+  
+  quizAddBtn.addEventListener('click', (e) => {
+    const name = e.target.getAttribute('data-product') || 'Water Plan';
+    const price = Number(e.target.getAttribute('data-price') || 110);
+    cart.push({ name, price, quantity: 1 });
+    saveCart();
+    renderCart();
+    showToast(`${name} added to your cart.`);
+    openCart();
+  });
+}
+
+// 6. Live Quality Report (Mock Fluctuation)
+const liveTds = document.getElementById('live-tds');
+const livePh = document.getElementById('live-ph');
+if (liveTds && livePh) {
+  setInterval(() => {
+    // Fluctuate TDS between 42 and 48
+    const newTds = Math.floor(Math.random() * (48 - 42 + 1)) + 42;
+    liveTds.textContent = newTds;
+    
+    // Fluctuate pH between 7.3 and 7.5
+    const newPh = (Math.random() * (7.5 - 7.3) + 7.3).toFixed(1);
+    livePh.textContent = newPh;
+  }, 3500); // Update every 3.5 seconds
+}
+
+// 7. Order Tracking Modal
+const trackOrderTrigger = document.getElementById('track-order-trigger');
+const trackingDialog = document.getElementById('tracking-dialog');
+const trackingClose = document.getElementById('tracking-close');
+
+if (trackOrderTrigger && trackingDialog) {
+  trackOrderTrigger.addEventListener('click', () => {
+    if (typeof trackingDialog.showModal === 'function') {
+      trackingDialog.showModal();
+    } else {
+      trackingDialog.setAttribute('open', '');
+    }
+    
+    // Mock progression animation when opened
+    const steps = document.querySelectorAll('.tracking-step');
+    steps.forEach(s => { s.classList.remove('completed', 'active'); });
+    steps[0].classList.add('completed');
+    steps[1].classList.add('completed');
+    steps[2].classList.add('active');
+  });
+  
+  trackingClose.addEventListener('click', () => {
+    trackingDialog.close();
+  });
+}
+
+// 8. Loyalty Points Logic
+const cartRewards = document.getElementById('cart-rewards');
+const earnedPoints = document.getElementById('earned-points');
+
+// Hook into existing renderCart function using a monkey patch for the loyalty points
+const originalRenderCart = renderCart;
+renderCart = function() {
+  originalRenderCart();
+  const total = cart.reduce((sum, item) => sum + item.price * item.quantity, 0);
+  if (total > 0 && cartRewards) {
+    cartRewards.style.display = 'flex';
+    // 1 point per 10 rupees spent
+    earnedPoints.textContent = Math.floor(total / 10);
+  } else if (cartRewards) {
+    cartRewards.style.display = 'none';
+  }
+};
+// Re-render once to apply points
+renderCart();
+
+// 9. Eco Counters Animation (Reuse stats observer)
+const ecoStats = document.querySelectorAll('[data-eco-count]');
+function animateEcoStats() {
+  ecoStats.forEach((stat) => {
+    const target = Number(stat.dataset.ecoCount);
+    const suffix = stat.dataset.suffix || '';
+    const start = performance.now();
+    const duration = 1500;
+    
+    function tick(now) {
+      const progress = Math.min((now - start) / duration, 1);
+      stat.textContent = `${Math.floor(progress * target).toLocaleString('en-IN')}${suffix}`;
+      if (progress < 1) window.requestAnimationFrame(tick);
+    }
+    window.requestAnimationFrame(tick);
+  });
+}
+
+if ('IntersectionObserver' in window && ecoStats.length) {
+  const ecoObserver = new IntersectionObserver((entries, observer) => {
+    if (!entries[0].isIntersecting) return;
+    animateEcoStats();
+    observer.disconnect();
+  }, { threshold: 0.4 });
+  ecoObserver.observe(document.querySelector('.sustainability'));
+}

@@ -27,8 +27,13 @@
       <ul>
         <li><a class="active" href="#home">Home</a></li>
         <li><a href="#about">About Us</a></li>
+        <li><a href="#quality">Quality</a></li>
         <li><a href="#products" data-i18n="nav_products">Products</a></li>
+        <li><a href="#corporate">For Business</a></li>
+        <li><a href="#impact">Impact</a></li>
         <li><a href="#blog" data-i18n="nav_blog">Blog</a></li>
+        <li><a href="#corporate">For Business</a></li>
+        <li><a href="#impact">Impact</a></li>
         <li><a href="#contact" data-i18n="nav_contact">Contact</a></li>
       </ul>
     </nav>
@@ -40,6 +45,7 @@
       </select>
       <button class="theme-toggle" id="theme-toggle" type="button" aria-label="Toggle dark mode">🌙</button>
       <button class="cart-button" id="cart-trigger" type="button" aria-label="View shopping cart">Cart <span id="cart-count">0</span></button>
+      <button class="header-button secondary-button track-btn" id="track-order-trigger" type="button" style="background: transparent; color: var(--secondary); border: 1px solid var(--secondary); border-radius: 5px; padding: 9px 16px; font-weight: bold; cursor: pointer; margin-right: 12px;">Track Order</button>
       <a class="header-button" href="#contact">Shop Now</a>
     </div>
   </header>
@@ -65,6 +71,53 @@
     </div>
   </section>
 
+  
+
+  <!-- Hydration Quiz -->
+  <section id="quiz" class="quiz-section">
+    <div class="quiz-container">
+      <div class="quiz-header">
+        <p class="eyebrow">Find your plan</p>
+        <h2>Hydration Quiz</h2>
+        <p>Answer 3 quick questions to get your personalized water plan.</p>
+      </div>
+      <div class="quiz-steps" id="quiz-steps">
+        <div class="quiz-step active" data-step="1">
+          <h3>How many people live in your home?</h3>
+          <div class="quiz-options">
+            <button type="button" class="quiz-option" data-value="1-2">1-2 People</button>
+            <button type="button" class="quiz-option" data-value="3-5">3-5 People</button>
+            <button type="button" class="quiz-option" data-value="6+">6+ People</button>
+          </div>
+        </div>
+        <div class="quiz-step" data-step="2">
+          <h3>Do you exercise often?</h3>
+          <div class="quiz-options">
+            <button type="button" class="quiz-option" data-value="yes">Yes, very active</button>
+            <button type="button" class="quiz-option" data-value="no">Not really</button>
+          </div>
+        </div>
+        <div class="quiz-step" data-step="3">
+          <h3>Where do you need delivery?</h3>
+          <div class="quiz-options">
+            <button type="button" class="quiz-option" data-value="home">Home</button>
+            <button type="button" class="quiz-option" data-value="office">Office</button>
+          </div>
+        </div>
+        <div class="quiz-result" id="quiz-result" style="display: none;">
+          <h3>Your Perfect Match</h3>
+          <p id="quiz-recommendation"></p>
+          <div class="quiz-result-actions">
+            <a href="#products" class="body-button" id="quiz-add-btn">View Product</a>
+            <button class="body-button secondary-button" id="quiz-reset" type="button">Retake Quiz</button>
+          </div>
+        </div>
+      </div>
+      <div class="quiz-progress">
+        <div class="progress-bar" id="quiz-progress-bar"></div>
+      </div>
+    </div>
+  </section>
   
   <!-- Source Story Section -->
   <section id="source-story" class="source-story" aria-labelledby="source-title">
@@ -96,7 +149,39 @@
       </div>
     </div>
   </section>
-\n  <!-- About Section -->
+\n
+  <!-- Live Water Quality -->
+  <section id="quality" class="quality-report">
+    <div class="section-heading">
+      <p class="eyebrow">Live Data</p>
+      <h2>Current Batch Quality</h2>
+      <p>Transparency is key. Here are the live stats from our purification facility.</p>
+    </div>
+    <div class="quality-grid">
+      <div class="quality-card reveal-on-scroll">
+        <div class="quality-icon">📊</div>
+        <h3>TDS Level</h3>
+        <strong id="live-tds">45</strong> <span class="unit">ppm</span>
+        <p>Optimal range: 30-100 ppm</p>
+        <div class="live-indicator"><span class="dot pulse"></span> Live Sensor</div>
+      </div>
+      <div class="quality-card reveal-on-scroll">
+        <div class="quality-icon">🧪</div>
+        <h3>pH Balance</h3>
+        <strong id="live-ph">7.4</strong> <span class="unit">pH</span>
+        <p>Optimal range: 7.0-8.5 pH</p>
+        <div class="live-indicator"><span class="dot pulse"></span> Live Sensor</div>
+      </div>
+      <div class="quality-card reveal-on-scroll">
+        <div class="quality-icon">✨</div>
+        <h3>Minerals Added</h3>
+        <strong>Magnesium & Calcium</strong>
+        <p>For enhanced taste and health benefits.</p>
+        <div class="live-indicator"><span class="dot solid"></span> Verified</div>
+      </div>
+    </div>
+  </section>
+
 <section id="about" class="about">
   <h2>About Us</h2>
   <p>
@@ -182,6 +267,28 @@
   </section>
 
   
+  
+
+  <!-- Corporate B2B Rentals -->
+  <section id="corporate" class="corporate-b2b">
+    <div class="b2b-content reveal-on-scroll">
+      <p class="eyebrow">For Business</p>
+      <h2>Elevate your office hydration.</h2>
+      <p>Keep your team energized with our premium water dispensers and bulk delivery plans tailored for modern workspaces.</p>
+      <ul class="b2b-features">
+        <li>✓ Hot & Cold Dispensers available for rent or purchase</li>
+        <li>✓ Dedicated account manager</li>
+        <li>✓ Flexible scheduling and invoicing</li>
+      </ul>
+      <div class="b2b-actions">
+        <a href="#contact" class="body-button">Request Corporate Quote</a>
+        <a href="#contact" class="body-button secondary-button">View Dispensers</a>
+      </div>
+    </div>
+    <div class="b2b-image reveal-on-scroll">
+      <img src="https://images.unsplash.com/photo-1573164713988-8665fc963095?auto=format&fit=crop&w=800&q=80" alt="Office water dispenser" loading="lazy" class="image-loaded">
+    </div>
+  </section>
   
   <!-- Bundle Builder -->
   <section id="bundle-builder" class="bundle-builder" aria-labelledby="bundle-title">
@@ -421,11 +528,56 @@
   <dialog class="cart-dialog" id="cart-dialog" aria-labelledby="cart-title">
     <div class="dialog-header"><div><p class="eyebrow">Your order</p><h2 id="cart-title">Shopping cart</h2></div><button class="dialog-close" id="cart-close" type="button" aria-label="Close shopping cart">×</button></div>
     <div class="cart-items" id="cart-items"><p class="empty-cart">Your cart is empty. Add a product to get started.</p></div>
+    <div class="cart-rewards" id="cart-rewards" style="display: none;">
+      <div class="rewards-icon">🎁</div>
+      <div class="rewards-text">
+        <span>AquaRewards</span>
+        <p>Earn <strong id="earned-points">0</strong> points on this order!</p>
+      </div>
+    </div>
     <div class="cart-summary"><span>Subtotal</span><strong id="cart-total">₹0</strong></div>
     <button class="body-button checkout-button" id="checkout-button" type="button" disabled>Continue to order</button>
   </dialog>
 
   <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <!-- Order Tracking Dialog -->
+  <dialog class="tracking-dialog" id="tracking-dialog" aria-labelledby="tracking-title">
+    <div class="dialog-header">
+      <div><p class="eyebrow" id="tracking-order-id">Order #AQ-98231</p><h2 id="tracking-title">Track Order</h2></div>
+      <button class="dialog-close" id="tracking-close" type="button" aria-label="Close tracking">×</button>
+    </div>
+    <div class="tracking-timeline">
+      <div class="tracking-step completed" id="ts-1">
+        <div class="step-icon">📝</div>
+        <div class="step-details">
+          <h4>Order Placed</h4>
+          <p>We've received your request.</p>
+        </div>
+      </div>
+      <div class="tracking-step" id="ts-2">
+        <div class="step-icon">🔬</div>
+        <div class="step-details">
+          <h4>Quality Check</h4>
+          <p>Your water is being purified and bottled.</p>
+        </div>
+      </div>
+      <div class="tracking-step" id="ts-3">
+        <div class="step-icon">🚚</div>
+        <div class="step-details">
+          <h4>Out for Delivery</h4>
+          <p>Our driver is on the way.</p>
+        </div>
+      </div>
+      <div class="tracking-step" id="ts-4">
+        <div class="step-icon">✅</div>
+        <div class="step-details">
+          <h4>Delivered</h4>
+          <p>Enjoy your fresh hydration!</p>
+        </div>
+      </div>
+    </div>
+  </dialog>
   
   <a class="whatsapp-float" href="https://wa.me/919876543210" target="_blank" aria-label="Chat on WhatsApp">
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" fill="currentColor"><path d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zm-157 341.6c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3L72 359.2l-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-32.6-16.3-54-29.1-75.5-66-2.1-3.6-2.1-5.6 0-10 1.8-3.8 5.5-6.5 8.3-10.2 2.8-3.7 3.7-6.5 5.5-10.9 1.9-4.6 .9-8.8-.9-12.5s-12.5-30.2-17.1-41.3c-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.8 35.2 15.2 49 16.5 66.6 13.9 10.7-1.6 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.5-5-3.9-10.5-6.6z"/></svg>
@@ -453,7 +605,34 @@
       <a href="https://wa.me/?text=Hey!%20I%20use%20AquaPure%20for%20my%20water%20delivery.%20Sign%20up%20using%20my%20link%20and%20we%20both%20get%20a%20free%2020L%20jar!%20%28https%3A%2F%2Faquapure.example.com%29" class="body-button" target="_blank">Share on WhatsApp <span>↗</span></a>
     </div>
   </section>
-\n  <!-- Footer -->
+\n
+  <!-- Sustainability Dashboard -->
+  <section id="impact" class="sustainability" aria-labelledby="impact-title">
+    <div class="sustainability-content reveal-on-scroll">
+      <p class="eyebrow">Our Impact</p>
+      <h2 id="impact-title">Hydration that cares for the planet.</h2>
+      <p>Through our eco-friendly packaging and empty bottle return program, we're making a measurable difference together.</p>
+    </div>
+    <div class="impact-stats">
+      <div class="impact-stat reveal-on-scroll">
+        <div class="impact-icon">♻️</div>
+        <strong data-eco-count="125000" data-suffix="+">0</strong>
+        <span>Plastic Bottles Saved</span>
+      </div>
+      <div class="impact-stat reveal-on-scroll">
+        <div class="impact-icon">💧</div>
+        <strong data-eco-count="450000" data-suffix="L">0</strong>
+        <span>Water Recycled in Process</span>
+      </div>
+      <div class="impact-stat reveal-on-scroll">
+        <div class="impact-icon">🌱</div>
+        <strong data-eco-count="50" data-suffix=" Tons">0</strong>
+        <span>CO2 Emissions Reduced</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
   <footer>
     <div class="footer-grid">
       <div class="footer-brand">
